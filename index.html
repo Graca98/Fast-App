@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./style.css" type="text/css" rel="stylesheet">
+  <title>Program</title>
+</head>
+<body>
+  <div class="firstBox">
+    <h3>Tečky na čárky</h3>
+    <textarea id="teckyNaCarky" rows="24" cols="75"></textarea>
+    <textarea id="teckyNaCarkyReady" rows="24" cols="75"></textarea>
+    <button onclick="copyTeckaText()">Copy</button>
+    <!-- <button id="btnSmazTeckaText">Smazat</button> -->
+  </div>
+
+  <div class="secondBox">
+    <h3>Text na jeden řádek</h3>
+    <textarea id="textNaJednomRadku" rows="24" cols="75"></textarea>
+    <textarea id="textNaJednomRadkuReady" rows="24" cols="75"></textarea>
+    <button onclick="copyRowText()">Copy</button>
+    <p class="pocetZnaku"></p>
+  </div>
+
+
+  <script src="./js/index.js"></script>
+</body>
+</html>
