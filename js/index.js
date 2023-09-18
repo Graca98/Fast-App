@@ -29,7 +29,9 @@ let readyRadekValue;
 
 textNaRadek.addEventListener("input", function handleChange(e) {
   let text = e.target.value
-  let formatovanyText = text.replace(/\n/g, ', ');
+  let formatovanyText = text.trim().replace(/\n/g, ', ');
+  formatovanyText = formatovanyText.charAt(0).toUpperCase() + formatovanyText.slice(1).toLowerCase();
+  formatovanyText.replace(/:/g, "")
 
   // Výsledek
   readyRadekValue = readyBoxNaRadek.value = formatovanyText
