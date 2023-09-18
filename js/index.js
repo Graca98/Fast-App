@@ -23,7 +23,7 @@ function copyTeckaText() {
 let textNaRadek = document.getElementById("textNaJednomRadku")
 let readyBoxNaRadek = document.getElementById("textNaJednomRadkuReady")
 let pocetZnaku = document.querySelector(".pocetZnaku")
-let count = pocetZnaku.innerHTML = "Počet znaků: " + readyRadekValue.length
+let count = pocetZnaku.innerHTML = "Počet znaků: " + readyBoxNaRadek.length
 let readyRadekValue;
 
 
