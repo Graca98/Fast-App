@@ -31,7 +31,8 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   let text = e.target.value
   let formatovanyText = text.trim().replace(/\n/g, ', ');
   formatovanyText = formatovanyText.charAt(0).toUpperCase() + formatovanyText.slice(1).toLowerCase();
-  formatovanyText.replace(/:/g, "")
+  formatovanyText = formatovanyText.replace(/:/g, ""); // nahradí dvojtečky ničím
+  formatovanyText = formatovanyText.replace(/ ,/g, ","); // nahradí mezeru před čárkou pouze čárkou
 
   // Výsledek
   readyRadekValue = readyBoxNaRadek.value = formatovanyText
