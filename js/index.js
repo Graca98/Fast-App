@@ -23,7 +23,7 @@ function copyTeckaText() {
 let textNaRadek = document.getElementById("textNaJednomRadku")
 let readyBoxNaRadek = document.getElementById("textNaJednomRadkuReady")
 let pocetZnaku = document.querySelector(".pocetZnaku")
-let count = pocetZnaku.innerHTML = "Počet znaků: "
+let count = pocetZnaku.innerHTML = "Počet znaků: " + readyRadekValue.length
 let readyRadekValue;
 
 
@@ -35,13 +35,14 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   formatovanyText = formatovanyText.replace(/ ,/g, ","); // nahradí mezeru před čárkou pouze čárkou
   formatovanyText = formatovanyText.replace(/ w/g, " W"); // vezme " w" (mezera w) a nahradí " W"
   formatovanyText = formatovanyText.replace(/ db/g, " dB"); // vezme " db" (mezera db) a nahradí " dB"
+  formatovanyText = formatovanyText.replace(/ hepa/g, " HEPA"); // vezme " db" (mezera db) a nahradí " dB"
 
 
 
   // Výsledek
   readyRadekValue = readyBoxNaRadek.value = formatovanyText
   // Počet znaků výsledku
-  pocetZnaku.innerHTML = `Počet znaků: ${formatovanyText.length}`
+  // pocetZnaku.innerHTML = `Počet znaků: ${formatovanyText.length}`
 })
 
 // Zkopíruje text buttonu
