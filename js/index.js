@@ -33,6 +33,10 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   formatovanyText = formatovanyText.charAt(0).toUpperCase() + formatovanyText.slice(1).toLowerCase();
   formatovanyText = formatovanyText.replace(/:/g, ""); // nahradí dvojtečky ničím
   formatovanyText = formatovanyText.replace(/ ,/g, ","); // nahradí mezeru před čárkou pouze čárkou
+  formatovanyText = formatovanyText.replace(/ w/g, " W"); // vezme " w" (mezera w) a nahradí " W"
+  formatovanyText = formatovanyText.replace(/ db/g, " dB"); // vezme " db" (mezera db) a nahradí " dB"
+
+
 
   // Výsledek
   readyRadekValue = readyBoxNaRadek.value = formatovanyText
