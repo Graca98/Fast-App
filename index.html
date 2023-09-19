@@ -8,29 +8,36 @@
   <title>Program</title>
 </head>
 <body>
-  <div class="firstBox">
-    <h3>Tečky na čárky</h3>
-    <textarea id="teckyNaCarky" rows="24" cols="75"></textarea>
-    <textarea id="teckyNaCarkyReady" rows="24" cols="75"></textarea>
-    <button onclick="copyTeckaText()" type="button" class="btn btn-primary">Copy</button>
-    <button onclick="" type="button" class="btn btn-danger">Smazat</button>
-    <!-- <button id="btnSmazTeckaText">Smazat</button> -->
-  </div>
-  
-  <div class="secondBox">
-    <h3>Text na jeden řádek</h3>
-    <textarea id="textNaJednomRadku" rows="24" cols="75"></textarea>
-    <textarea id="textNaJednomRadkuReady" rows="24" cols="75"></textarea>
-    <button onclick="copyRowText()" type="button" class="btn btn-primary">Copy</button>
-    <p class="pocetZnaku"></p>
-    <p class="pocetZnakuReady"></p>
-  </div>
-  
-  <div class="thirdBox">
-    <h3>Odstranění hvězdiček na začátku textu</h3>
-    <textarea id="textareaHvezdicek" rows="16" cols="75"></textarea>
-    <textarea id="textareaHvezdicekReady" rows="16" cols="75"></textarea>
-    <button onclick="copyBezHvezdicekText()" type="button" class="btn btn-primary">Copy</button>
+  <div class="main px-3 pt-3">
+    <div class="firstBox container-fluid mb-5">
+      <h3>Tečky na čárky</h3>
+      <div class="row">
+        <div class="form-group"></div> <!--. Vyplnit později  -->
+        <textarea id="teckyNaCarky" class="form-control col-8 col-lg-6 bg-dark text-white" rows="16" placeholder="Text na edit"></textarea>
+        <textarea id="teckyNaCarkyReady" class="form-control col-8 col-lg-6 bg-dark text-white" rows="16" placeholder="Výsledek"></textarea>
+      </div>
+      <div class="row d-flex justify-content-center pt-3">
+        <button onclick="copyTeckaText()" type="button" class="btn btn-primary">Copy</button>
+        <button onclick="" type="button" class="btn btn-danger disabled">Smazat</button>
+      </div>
+      <!-- <button id="btnSmazTeckaText">Smazat</button> -->
+    </div>
+    
+    <div class="secondBox container-fluid">
+      <h3>Text na jeden řádek</h3>
+      <textarea id="textNaJednomRadku" rows="24" cols="75"></textarea>
+      <textarea id="textNaJednomRadkuReady" rows="24" cols="75"></textarea>
+      <button onclick="copyRowText()" type="button" class="btn btn-primary">Copy</button>
+      <p class="pocetZnaku"></p>
+      <p class="pocetZnakuReady"></p>
+    </div>
+    
+    <div class="thirdBox container-fluid">
+      <h3>Odstranění hvězdiček na začátku textu</h3>
+      <textarea id="textareaHvezdicek" rows="16" cols="75"></textarea>
+      <textarea id="textareaHvezdicekReady" rows="16" cols="75"></textarea>
+      <button onclick="copyBezHvezdicekText()" type="button" class="btn btn-primary">Copy</button>
+    </div>
   </div>
   
   
