@@ -62,7 +62,7 @@ function copyRowText() {
 // Test
 readyBoxNaRadek.addEventListener("input", function handleChange(e) {
   let text = e.target.value
-  pocetZnakuReady.innerHTML = text.length
+  pocetZnakuReady.innerHTML = `Počet znaků v hotovém: ${text.length}`
 })
 
 //! ============================== Odstranění hvezdiček =============================================
