@@ -67,7 +67,7 @@ readyBoxNaRadek.addEventListener("input", function handleChange(e) {
 
 //! ============================== Odstranění hvezdiček =============================================
 let textareaHvezdicek = document.getElementById("textareaHvezdicek");
-let textareaHveznicekReady = document.getElementById("textareaHveznicekReady");
+let textareaHveznicekReady = document.getElementById("textareaHvezdicekReady");
 let result;
 
 textareaHvezdicek.addEventListener("input", function handleChange(e) {
