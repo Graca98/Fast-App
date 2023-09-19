@@ -72,7 +72,8 @@ let result;
 
 textareaHvezdicek.addEventListener("input", function handleChange(e) {
   let text = e.target.value
-  let zpracovanyText = text.replace(/\*\s/g, '');
+  let zpracovanyText = text.replace(/\*\s/g, ''); // odstraní hvezdicku *
+  zpracovanyText = rozpracovanyText.replace(/\-\s/g, ''); // odstraní pomlčku -
 
   result = textareaHvezdicekReady.value = zpracovanyText
 })
