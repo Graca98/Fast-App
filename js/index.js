@@ -41,7 +41,7 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   formatovanyText = formatovanyText.replace(/ hepa/g, " HEPA"); // vezme " hepa" (mezera hepa) a nahradí " HEPA"
   formatovanyText = formatovanyText.replace(/ v nimh/g, " V NiMH"); // vezme " v nimh" (mezera v nimh) a nahradí " V NiMH"
   formatovanyText = formatovanyText.replace(/ li-ion/g, " Li-Ion"); // vezme " li-ion" (mezera li-ion) a nahradí " Li-Ion"
-  formatovanyText = formatovanyText.replace("li-ion", "Li-Ion");
+  formatovanyText = formatovanyText.replace(/li-ion/g, "Li-Ion");
   formatovanyText = formatovanyText.replace(/ bpa/g, " BPA"); // vezme " bpa" (mezera ) a nahradí bpa" BPA"
   formatovanyText = formatovanyText.replace(/ tare/g, " TARE"); // vezme " tare" (mezera tare) a nahradí " TARE"
   formatovanyText = formatovanyText.replace(/ lcd/g, " LCD"); // vezme " lcd" (mezera lcd) a nahradí " LCD"
