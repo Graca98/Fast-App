@@ -23,6 +23,7 @@ function copyTeckaText() {
 let textNaRadek = document.getElementById("textNaJednomRadku")
 let readyBoxNaRadek = document.getElementById("textNaJednomRadkuReady")
 let pocetZnaku = document.querySelector(".pocetZnaku")
+let pocetZnakuReady = document.querySelector(".pocetZnakuReady") // test
 let count = pocetZnaku.innerHTML = "Počet znaků: "
 let readyRadekValue;
 
@@ -58,10 +59,27 @@ function copyRowText() {
   navigator.clipboard.writeText(readyRadekValue)
 }
 
-
+// Test
+readyBoxNaRadek.addEventListener("input", function handleChange(e) {
+  let text = e.target.value
+  pocetZnakuReady.innerHTML = text.length
+})
 
 //! ============================== Odstranění hvezdiček =============================================
-let hvezdickaTextareaBox = document.getElementById("")
+let textareaHvezdicek = document.getElementById("textareaHvezdicek");
+let textareaHveznicekReady = document.getElementById("textareaHveznicekReady");
+let result;
+
+textareaHvezdicek.addEventListener("input", function handleChange(e) {
+  let text = e.target.value
+  let zpracovanyText = text.replace(/\*\s/g, '');
+
+  result = textareaHvezdicekReady.value = zpracovanyText
+})
+
+function copyBezHvezdicekText() {
+  navigator.clipboard.writeText(result)
+}
 
 
 
