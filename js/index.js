@@ -60,6 +60,10 @@ function copyRowText() {
   navigator.clipboard.writeText(readyRadekValue)
 }
 
+function smazText() {
+  textNaRadek.value = ""
+}
+
 // Test
 readyBoxNaRadek.addEventListener("input", function handleChange(e) {
   let text = e.target.value
