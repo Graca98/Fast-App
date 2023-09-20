@@ -18,6 +18,10 @@ text.addEventListener("input", function handleChange(e) {
 function copyTeckaText() {
   navigator.clipboard.writeText(readyBoxValue)
 }
+function smazFirstBox() {
+  text.value = ""
+  textReady.value = ""
+}
 
 //! ============================== Text na jeden řádek =============================================
 let textNaRadek = document.getElementById("textNaJednomRadku")
@@ -60,8 +64,9 @@ function copyRowText() {
   navigator.clipboard.writeText(readyRadekValue)
 }
 
-function smazText() {
+function smazSecondBox() {
   textNaRadek.value = ""
+  readyBoxNaRadek.value = ""
 }
 
 // Test
@@ -85,6 +90,10 @@ textareaHvezdicek.addEventListener("input", function handleChange(e) {
 
 function copyBezHvezdicekText() {
   navigator.clipboard.writeText(result)
+}
+function smazThirdBox() {
+  textareaHvezdicek.value = ""
+  textareaHveznicekReady.value = ""
 }
 
 
