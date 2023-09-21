@@ -67,6 +67,7 @@ function copyRowText() {
 function smazSecondBox() {
   textNaRadek.value = ""
   readyBoxNaRadek.value = ""
+  pocetZnaku.innerHTML = "Počet znaků: "
 }
 
 // Test
