@@ -28,7 +28,7 @@ let textNaRadek = document.getElementById("textNaJednomRadku")
 let readyBoxNaRadek = document.getElementById("textNaJednomRadkuReady")
 let pocetZnaku = document.querySelector(".pocetZnaku")
 let pocetZnakuReady = document.querySelector(".pocetZnakuReady") // test
-let count = pocetZnaku.innerHTML = "Počet znaků: "
+let count = pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length
 let readyRadekValue;
 
 console.log(readyBoxNaRadek.value.length)
@@ -67,7 +67,7 @@ function copyRowText() {
 function smazSecondBox() {
   textNaRadek.value = ""
   readyBoxNaRadek.value = ""
-  pocetZnaku.innerHTML = "Počet znaků: "
+  pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length
 }
 
 // Test
