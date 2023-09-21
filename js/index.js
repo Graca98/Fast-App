@@ -103,13 +103,15 @@ function smazThirdBox() {
 
 
 //! ============================== Porovnání textů =============================================
-let text1Input = document.getElementById("textRozdilu1");
-let text2Input = document.getElementById("textRozdilu2");
 let rozdil = document.querySelector(".rozdil");
 
 function porovnej() {
+  let text1Input = document.getElementById("textRozdilu1");
+  let text2Input = document.getElementById("textRozdilu2");
+  
   let text1 = text1Input.value;
   let text2 = text2Input.value;
+  
   let words1 = text1.split(" ");
   let words2 = text2.split(" ");
 
@@ -119,6 +121,7 @@ function porovnej() {
     }
   }
 }
+
 
 
 /* 
