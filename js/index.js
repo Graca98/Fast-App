@@ -28,7 +28,8 @@ let textNaRadek = document.getElementById("textNaJednomRadku")
 let readyBoxNaRadek = document.getElementById("textNaJednomRadkuReady")
 let pocetZnaku = document.querySelector(".pocetZnaku")
 let pocetZnakuReady = document.querySelector(".pocetZnakuReady") // test
-let count = pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length
+pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length // nastaví hodnotu na 0 (prázdný box)
+pocetZnakuReady.innerHTML = "Počez znaků v druhém: " + readyBoxNaRadek.value.length // nastaví hodnotu na 0 (prázdný box)
 let readyRadekValue;
 
 console.log(readyBoxNaRadek.value.length)
@@ -67,10 +68,13 @@ function copyRowText() {
 function smazSecondBox() {
   textNaRadek.value = ""
   readyBoxNaRadek.value = ""
-  pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length
+  // Nastaví počítadla na 0 (prazdný box)
+  pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length 
+  pocetZnakuReady.innerHTML = "Počez znaků v druhém: " + readyBoxNaRadek.value.length
+
 }
 
-// Test
+// Počítá znaky v druhém boxu, pokud se v něm edituje
 readyBoxNaRadek.addEventListener("input", function handleChange(e) {
   let text = e.target.value
   pocetZnakuReady.innerHTML = `Počet znaků v hotovém: ${text.length}`
