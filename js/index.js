@@ -20,7 +20,7 @@ function copyTeckaText() {
 }
 function smazFirstBox() {
   text.value = ""
-  textReady.value = ""
+  readyBox.value = ""
 }
 
 //! ============================== Text na jeden řádek =============================================
