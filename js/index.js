@@ -29,7 +29,7 @@ let readyBoxNaRadek = document.getElementById("textNaJednomRadkuReady")
 let pocetZnaku = document.querySelector(".pocetZnaku")
 let pocetZnakuReady = document.querySelector(".pocetZnakuReady") // test
 pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length // nastaví hodnotu na 0 (prázdný box)
-pocetZnakuReady.innerHTML = "Počez znaků v druhém: " + readyBoxNaRadek.value.length // nastaví hodnotu na 0 (prázdný box)
+pocetZnakuReady.innerHTML = "Počez znaků v hotovém: " + readyBoxNaRadek.value.length // nastaví hodnotu na 0 (prázdný box)
 let readyRadekValue;
 
 console.log(readyBoxNaRadek.value.length)
@@ -70,7 +70,7 @@ function smazSecondBox() {
   readyBoxNaRadek.value = ""
   // Nastaví počítadla na 0 (prazdný box)
   pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length 
-  pocetZnakuReady.innerHTML = "Počez znaků v druhém: " + readyBoxNaRadek.value.length
+  pocetZnakuReady.innerHTML = "Počez znaků v hotovém: " + readyBoxNaRadek.value.length
 
 }
 
