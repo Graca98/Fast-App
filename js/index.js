@@ -102,6 +102,19 @@ function smazThirdBox() {
 }
 
 
+//! ============================== Porovnání textů =============================================
+let text1 = document.getElementById("textRozdilu1")
+let text2 = document.getElementById("textRozdilu2")
+let rozdil = document.querySelector(".rozdil")
+
+let words1 = text1.split(" ")
+let words2 = text2.split(" ")
+
+for (let i = 0; i < Math.min(words1.length, words2.length); i++) {
+  if (words1[i] !== words2[i]) {
+      rozdil.innerHTML = `Slovo na pozici ${i} se liší: '${words1[i]}' vs. '${words2[i]}'`;
+  }
+}
 
 /* 
 Podlahový vysavač
