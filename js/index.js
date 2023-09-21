@@ -115,12 +115,21 @@ function porovnej() {
   let words1 = text1.split(" ");
   let words2 = text2.split(" ");
 
+  let differences = [];
+  
   for (let i = 0; i < Math.min(words1.length, words2.length); i++) {
     if (words1[i] !== words2[i]) {
-      rozdil.innerHTML = `Slovo na pozici ${i} se liší: '${words1[i]}' vs. '${words2[i]}'`;
+      differences.push(`Slovo na pozici ${i} se liší: '${words1[i]}' vs. '${words2[i]}'`);
     }
   }
+
+  if (differences.length > 0) {
+    rozdil.innerHTML = differences.join("<br>");
+  } else {
+    rozdil.innerHTML = "Texty jsou shodné.";
+  }
 }
+
 
 
 
