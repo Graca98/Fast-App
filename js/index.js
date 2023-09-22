@@ -104,6 +104,8 @@ function smazThirdBox() {
 
 //! ============================== Porovnání textů =============================================
 let rozdil = document.querySelector(".rozdil");
+let text1InputSmaz = document.getElementById("textRozdilu1");
+let text2InputSmaz = document.getElementById("textRozdilu2");
 
 function porovnej() {
   let text1Input = document.getElementById("textRozdilu1");
@@ -131,8 +133,8 @@ function porovnej() {
 }
 
 function smazFourthBox() {
-  text1 = ""
-  text2 = ""
+  text1InputSmaz.value = ""
+  text2InputSmaz.value = ""
 }
 
 
