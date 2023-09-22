@@ -107,7 +107,7 @@ let rozdil = document.querySelector(".rozdil");
 let text1InputSmaz = document.getElementById("textRozdilu1");
 let text2InputSmaz = document.getElementById("textRozdilu2");
 
-let differences = [];
+let differences;
 
 function porovnej() {
   let text1Input = document.getElementById("textRozdilu1");
@@ -119,6 +119,7 @@ function porovnej() {
   let words1 = text1.split(" ");
   let words2 = text2.split(" ");
 
+  differences = []
   
   for (let i = 0; i < Math.min(words1.length, words2.length); i++) {
     if (words1[i] !== words2[i]) {
@@ -136,7 +137,7 @@ function porovnej() {
 function smazFourthBox() {
   text1InputSmaz.value = ""
   text2InputSmaz.value = ""
-  differences.value = ""
+  differences = ""
 }
 
 
