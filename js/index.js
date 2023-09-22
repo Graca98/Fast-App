@@ -130,6 +130,11 @@ function porovnej() {
   }
 }
 
+function smazFourthBox() {
+  text1 = ""
+  text2 = ""
+}
+
 
 
 
