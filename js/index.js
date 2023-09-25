@@ -50,6 +50,11 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   formatovanyText = formatovanyText.replace(/ bpa/g, " BPA"); // vezme " bpa" (mezera ) a nahradí bpa" BPA"
   formatovanyText = formatovanyText.replace(/ tare/g, " TARE"); // vezme " tare" (mezera tare) a nahradí " TARE"
   formatovanyText = formatovanyText.replace(/ lcd/g, " LCD"); // vezme " lcd" (mezera lcd) a nahradí " LCD"
+  formatovanyText = formatovanyText.replace(/xtendlan/g, "XtendLan");
+  formatovanyText = formatovanyText.replace(/ utp/g, " UTP");
+  formatovanyText = formatovanyText.replace(/ cat/g, " Cat");
+  formatovanyText = formatovanyText.replace(/rj/g, "RJ");
+  formatovanyText = formatovanyText.replace(/./g, "");
 
   // formatovanyText = formatovanyText.replace(/ here/g, " here"); // vezme " " (mezera ) a nahradí " "
 
