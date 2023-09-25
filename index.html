@@ -9,22 +9,23 @@
   <title>Program</title>
 </head>
 <body>
-  <div class="main px-3 pt-3">
-    <div class="firstBox container-fluid mb-5">
+  <div class="main pt-3">
+    <div class="firstBox container-fluid mb-5 px-3">
       <h3>Tečky na čárky</h3>
       <div class="row">
         <div class="form-group"></div> <!--. Vyplnit později  -->
-        <textarea id="teckyNaCarky" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Text na edit"></textarea>
-        <textarea id="teckyNaCarkyReady" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Výsledek"></textarea>
+        <textarea id="teckyNaCarky" class="form-control col-10 col-lg-6 bg-dark text-white" rows="16" placeholder="Text na edit"></textarea>
+        <div class="offset-2"></div>
+        <textarea id="teckyNaCarkyReady" class="form-control col-10 col-lg-6 bg-dark text-white" rows="16" placeholder="Výsledek"></textarea>
       </div>
       <div class="row d-flex justify-content-center pt-3 pb-2">
-        <button onclick="copyTeckaText()" type="button" class="btn btn-primary">Copy</button>
+        <button onclick="copyTeckaText()" type="button" class="btn btn-primary pe-2">Copy</button>
         <button onclick="smazFirstBox()" type="button" class="btn btn-danger">Smazat</button>
       </div>
       <!-- <button id="btnSmazTeckaText">Smazat</button> -->
     </div>
     
-    <div class="secondBox container-fluid mb-5">
+    <div class="secondBox container-fluid mb-5 px-3">
       <h3>Text na jeden řádek</h3>
       <div class="row">
         <div class="form-group"></div> <!--. Vyplnit později  -->
@@ -39,7 +40,7 @@
       </div>
     </div>
     
-    <div class="thirdBox container-fluid mb-5">
+    <div class="thirdBox container-fluid mb-5 px-3">
       <h3>Odstranění hvězdiček na začátku textu</h3>
       <div class="row">
         <div class="form-group"></div> <!--. Vyplnit později  -->
@@ -53,7 +54,7 @@
     </div>
   </div>
 
-  <div class="fourthBox container-fluid mb-5">
+  <div class="fourthBox container-fluid mb-5 px-3">
     <h3>Porovnání textů</h3>
     <div class="row">
       <div class="form-group"></div> <!--. Vyplnit později  -->
