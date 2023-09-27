@@ -27,7 +27,7 @@ btnSubmit.addEventListener("click", function(e) {
   //. Proměnné
   // Hlavička
   //todo Odstranit 'value = "hodnota"'
-  let typ = typInput.value = "Notebook";
+  let typ = typInput.value /* = "Notebook"; */
   let model = modelInput.value = "Lenovo LOQ 15IRH8";
   let pn = pnInput.value = "82XV005KCK";
   let os = osInput.value = "Windows 11 Home";
