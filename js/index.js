@@ -32,8 +32,6 @@ pocetZnaku.innerHTML = "Počet znaků: " + textNaRadek.value.length // nastaví 
 pocetZnakuReady.innerHTML = "Počez znaků v hotovém: " + readyBoxNaRadek.value.length // nastaví hodnotu na 0 (prázdný box)
 let readyRadekValue;
 
-console.log(readyBoxNaRadek.value.length)
-
 
 textNaRadek.addEventListener("input", function handleChange(e) {
   let text = e.target.value
@@ -54,7 +52,7 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   formatovanyText = formatovanyText.replace(/ utp/g, " UTP");
   formatovanyText = formatovanyText.replace(/ cat/g, " Cat");
   formatovanyText = formatovanyText.replace(/rj/g, "RJ");
-  formatovanyText = formatovanyText.replace(/./g, "");
+  formatovanyText = formatovanyText.replace(/\./g, "");
 
   // formatovanyText = formatovanyText.replace(/ here/g, " here"); // vezme " " (mezera ) a nahradí " "
 
@@ -129,7 +127,7 @@ function porovnej() {
   
   for (let i = 0; i < Math.min(words1.length, words2.length); i++) {
     if (words1[i] !== words2[i]) {
-      differences.push(`Slovo na pozici ${i} se liší: '${words1[i]}' vs. '${words2[i]}'`);
+      differences.push(`Slovo na pozici ${i} se liší: '<strong>${words1[i]}</strong>' vs '<strong>${words2[i]}</strong>'`);
     }
   }
 
