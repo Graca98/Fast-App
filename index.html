@@ -82,13 +82,18 @@
       <div class="thirdBox container-fluid mb-5 px-3">
         <h3>Odstranění "* - •" znaků na začátku textu</h3>
         <div class="row">
-          <div class="form-group"></div> <!--. Vyplnit později  -->
-          <textarea id="textareaHvezdicek" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Text na edit"></textarea>
-          <textarea id="textareaHvezdicekReady" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Výsledek"></textarea>
+          <div class="col-12 col-md-6 pe-1">
+            <textarea id="textareaHvezdicek" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Text na edit"></textarea>
+          </div>
+          <div class="col-12 col-md-6 ps-1"> 
+            <textarea id="textareaHvezdicekReady" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Výsledek"></textarea>
+          </div>
         </div>
-        <div class="row d-flex justify-content-center pt-3 pb-2">
-          <button onclick="copyBezHvezdicekText()" type="button" class="btn btn-primary">Copy</button>
-          <button onclick="smazThirdBox()" type="button" class="btn btn-danger">Smazat</button>
+        <div class="d-flex justify-content-center pt-3 pb-2">
+          <div class="btn-group">
+            <button onclick="copyBezHvezdicekText()" type="button" class="btn btn-primary">Copy</button>
+            <button onclick="smazThirdBox()" type="button" class="btn btn-danger">Smazat</button>
+          </div>
         </div>
       </div>
     </div>
@@ -96,13 +101,18 @@
     <div class="fourthBox container-fluid mb-5 px-3">
       <h3>Porovnání textů</h3>
       <div class="row">
-        <div class="form-group"></div> <!--. Vyplnit později  -->
-        <textarea id="textRozdilu1" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Text 1"></textarea>
-        <textarea id="textRozdilu2" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Text 2"></textarea>
+        <div class="col-12 col-md-6 pe-1">
+          <textarea id="textRozdilu1" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Text 1"></textarea>
+        </div>
+        <div class="col-12 col-md-6 ps-1">
+          <textarea id="textRozdilu2" class="form-control col-12 col-lg-6 bg-dark text-white" rows="16" placeholder="Text 2"></textarea>
+        </div>
       </div>
-      <div class="row d-flex justify-content-center pt-3 pb-2">
-        <button onclick="porovnej()" type="button" class="btn btn-primary">Porovnat</button>
-        <button onclick="smazFourthBox()" type="button" class="btn btn-danger">Smazat</button>
+      <div class="d-flex justify-content-center pt-3 pb-2">
+        <div class="btn-group">
+          <button onclick="porovnej()" type="button" class="btn btn-primary">Porovnat</button>
+          <button onclick="smazFourthBox()" type="button" class="btn btn-danger">Smazat</button>
+        </div>
         <p class="rozdil col-12"></p>
         <!-- <button onclick="smazFourthBox()" type="button" class="btn btn-danger">Smazat</button> -->
       </div>
