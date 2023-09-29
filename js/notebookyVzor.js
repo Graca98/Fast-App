@@ -59,6 +59,7 @@ btnSubmit.addEventListener("click", function(e) {
   // Grafika
   let grafikaTyp = grafikaTypInput.value = "Dedikovaná"
   let grafika = grafikaInput.value = "NVIDIA RTX 4050 6GB"
+  //todo dodělat zbytek
 
 
   //. If podmínky na "ostatní"

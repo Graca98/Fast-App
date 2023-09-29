@@ -216,16 +216,79 @@
           <div class="row">
             <div class="col-12 col-md-8">
               <div class="input-group input-group-sm mb-1">
-                <input type="text" id="grafikaTyp" class="form-control" placeholder="Integrovaná" aria-label="grafikaTyp" aria-describedby="grafikaTyp">
+                <input type="text" id="grafikaTyp" class="form-control" value="Integrovaná" aria-label="grafikaTyp" aria-describedby="grafikaTyp">
                 <span class="input-group-text">Grafická karta</span> <!--todo grafika musí napsat i text -->
                 <input type="text" id="grafika" class="form-control" placeholder="RTX 4050 6GB" aria-label="grafika" aria-describedby="grafika">
               </div>
             </div>
           </div>
           <!-- Pamět grafiky -->
+          <!-- Je zde checkbox -->
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <div class="input-group mb-1">
+                <div class="input-group-text">
+                  <input id="pametGrafikaValue" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <span class="input-group-text">Paměť grafické karty</span> <!--todo grafika musí napsat i text -->
+                <input type="text" id="grafikaPamet" class="form-control" placeholder="6144 MB" aria-label="Text input with checkbox">
+              </div>
+            </div>
+          </div>
           <!-- Ostatní -->
-
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="ostatniGrafika" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
+              </div>
+            </div>
+          </div>
   
+
+          <h6 class="mt-4">Specifikace</h6>
+          <!-- TouchPad -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="touchpadValue">
+            <label class="form-check-label" for="touchpadValue">
+              Polohovací zařízení TouchPad
+            </label>
+          </div>
+          <!-- Podsvícena klavesnice -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="podsvicenaKlavesniceValue">
+            <label class="form-check-label" for="podsvicenaKlavesniceValue">
+              Podsvícená klávesnice
+            </label>
+          </div>
+          <!-- Numerická klávesnice -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="numerickaKlavesniceValue">
+            <label class="form-check-label" for="numerickaKlavesniceValue">
+              Numerická klávesnice
+            </label>
+          </div>
+          <!-- Web kamera -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="webcameraValue">
+            <label class="form-check-label" for="webcameraValue">
+              Web kamera
+            </label>
+          </div>
+          <!-- Čtečka otisku prstu -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="cteckaOtiskuValue">
+            <label class="form-check-label" for="cteckaOtiskuValue">
+              Čtečka otisku prstu
+            </label>
+          </div>
+          <!-- Ostatni -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="ostatniGrafika" class="form-control" aria-label="With textarea" placeholder="Wifi, bluetooth, usb, atd.." rows="16"></textarea>
+              </div>
+            </div>
+          </div>
   
   
   
