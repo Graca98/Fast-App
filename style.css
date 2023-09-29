@@ -10,8 +10,22 @@ textarea {
 
 .secondBox {
   background-color: #015101;
+  border-radius: 10px;
 }
 
 .fourthBox {
   background-color: #620600;
+  border-radius: 10px;
+}
+
+.male-pismo {
+  font-size: 13px;
+}
+
+
+@media screen and (min-width: 1200px) {
+  body {
+    max-width: 1400px;
+    margin: auto;
+  }
 }

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="./style.css" type="text/css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+  <title>Program</title>
+</head>
+<body>
+  <!--! HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary p-1 px-3">
+      <div class="container-fluid">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-white" href="index.html">Fast Helper</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="index.html">Hlavní stránka</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white active" href="notebookyVzor.html">Notebooky</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white disabled">Jiné</a>
+            </li>
+          </ul>
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--! HLAVNÍ OBSAH -->
+  <main>
+    <div class="main pt-4 mt-5">
+      <div class="firstBox container-fluid mb-5 px-4">
+        <form id="myForm">
+          <h6>Hlavička</h6>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Typ</span>
+                <input type="text" id="typ" class="form-control" required placeholder="Notebook" aria-label="ntbk" aria-describedby="typ">
+              </div>
+            </div>
+          </div>
+            <!-- model -->
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Model</span>
+                <input type="text" id="model" class="form-control" placeholder="Lenovo IdeaPad Slim 3" aria-label="model" aria-describedby="model">
+                <button class="btn btn-secondary" type="button" id="button-addon2">Copy</button>
+              </div>
+            </div>
+          </div>
+          <!-- PN -->
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">PN</span> <!--todo PN musí napsat i text -->
+                <input type="text" id="pn" class="form-control" placeholder="82XJ0021MC" aria-label="pn" aria-describedby="pn">
+                <button class="btn btn-secondary" type="button" id="button-addon2">Copy</button>
+              </div>
+            </div>
+          </div>
+          <!-- OS -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Operační systém</span> <!--todo os musí napsat i text -->
+                <input type="text" id="os" class="form-control" placeholder="Windows 11 Home" aria-label="os" aria-describedby="os">
+              </div>
+            </div>
+          </div>
+          <!-- Ostatní -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="ostatniHlavicka" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
+              </div>
+            </div>
+          </div>
+  
+  
+          <h6 class="mt-4">Procesor</h6>
+          <!-- Procesor -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Procesor</span> <!--todo procesor musí napsat i text -->
+                <input type="text" id="procesor" class="form-control" placeholder="Intel Core i5-13420H" aria-label="procesor" aria-describedby="procesor">
+              </div>
+            </div>
+          </div>
+          <!-- Taktovací typická -->
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text" >Taktovací frekvence procesoru (typická)</span> <!--todo typicka musí napsat i text -->
+                <input type="text" id="typicka" class="form-control" placeholder="2,1" aria-label="typicka" aria-describedby="typicka">
+                <span class="input-group-text" id="procesor">Ghz</span>
+              </div>
+            </div>
+          </div>
+          <!-- Taktovací maximální -->
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Taktovací frekvence procesoru (maximální)</span> <!--todo maximalni musí napsat i text -->
+                <input type="text" id="maximalni" class="form-control" placeholder="4,6" aria-label="maximalni" aria-describedby="maximalni">
+                <span class="input-group-text" id="procesor">Ghz</span>
+              </div>
+            </div>
+          </div>
+          <!-- Jadra -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Počet jader procesoru</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="jadra" class="form-control" placeholder="8" aria-label="jadra" aria-describedby="jadra">
+              </div>
+            </div>
+          </div>
+          <!-- Ostatní -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="ostatniProcesor" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
+              </div>
+            </div>
+          </div>
+  
+  
+          <h6 class="mt-4">Pamět</h6>
+          <!-- pamet -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Pamět RAM</span> <!--todo pamet musí napsat i text -->
+                <input type="text" id="pamet" class="form-control" placeholder="8" aria-label="pamet" aria-describedby="pamet">
+                <span class="input-group-text">GB</span>
+              </div>
+            </div>
+          </div>
+          <!-- uloziste -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Uložiště</span> <!--todo uloziste musí napsat i text -->
+                <input type="text" id="uloziste" class="form-control" placeholder="SSD 512" aria-label="uloziste" aria-describedby="uloziste">
+                <span class="input-group-text">GB</span>
+              </div>
+            </div>
+          </div>
+          <!-- Ostatní -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="ostatniPamet" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
+              </div>
+            </div>
+          </div>
+  
+  
+          <h6 class="mt-4">Displej</h6>
+          <!-- uhlopricka -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Uhlopříčka</span> <!--todo uhlopricka musí napsat i text -->
+                <input type="text" id="uhlopricka" class="form-control" placeholder="15,6" aria-label="uhlopricka" aria-describedby="uhlopricka">
+                <span class="input-group-text">"</span>
+              </div>
+            </div>
+          </div>
+          <!-- Rozlišení -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Rozlišení</span> <!--todo uhlopricka musí napsat i text -->
+                <input type="text" id="rozliseni" class="form-control" placeholder="1920 x 1080 IPS" aria-label="rozliseni" aria-describedby="rozliseni">
+              </div>
+            </div>
+          </div>
+          <!-- Svítivost -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Svítivost displeje</span> <!--todo svitivost musí napsat i text -->
+                <input type="text" id="svitivost" class="form-control" placeholder="300" aria-label="svitivost" aria-describedby="svitivost">
+                <span class="input-group-text">Nitů</span>
+              </div>
+            </div>
+          </div>
+          <!-- Ostatní -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="ostatniDisplej" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
+              </div>
+            </div>
+          </div>
+
+
+          <h6 class="mt-4">Grafika</h6>
+          <!-- Grafická karta -->
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <div class="input-group input-group-sm mb-1">
+                <input type="text" id="grafikaTyp" class="form-control" value="Integrovaná" aria-label="grafikaTyp" aria-describedby="grafikaTyp">
+                <span class="input-group-text">Grafická karta</span> <!--todo grafika musí napsat i text -->
+                <input type="text" id="grafika" class="form-control" placeholder="RTX 4050 6GB" aria-label="grafika" aria-describedby="grafika">
+              </div>
+            </div>
+          </div>
+          <!-- Pamět grafiky -->
+          <!-- Je zde checkbox -->
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <div class="input-group mb-1">
+                <div class="input-group-text">
+                  <input id="pametGrafikaValue" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <span class="input-group-text">Paměť grafické karty</span> <!--todo grafika musí napsat i text -->
+                <input type="text" id="grafikaPamet" class="form-control" placeholder="6144 MB" aria-label="Text input with checkbox">
+              </div>
+            </div>
+          </div>
+          <!-- Ostatní -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="ostatniGrafika" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
+              </div>
+            </div>
+          </div>
+  
+
+          <h6 class="mt-4">Specifikace</h6>
+          <!-- TouchPad -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="touchpadValue">
+            <label class="form-check-label" for="touchpadValue">
+              Polohovací zařízení TouchPad
+            </label>
+          </div>
+          <!-- Podsvícena klavesnice -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="podsvicenaKlavesniceValue">
+            <label class="form-check-label" for="podsvicenaKlavesniceValue">
+              Podsvícená klávesnice
+            </label>
+          </div>
+          <!-- Numerická klávesnice -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="numerickaKlavesniceValue">
+            <label class="form-check-label" for="numerickaKlavesniceValue">
+              Numerická klávesnice
+            </label>
+          </div>
+          <!-- Web kamera -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="webcameraValue">
+            <label class="form-check-label" for="webcameraValue">
+              Web kamera
+            </label>
+          </div>
+          <!-- Čtečka otisku prstu -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="cteckaOtiskuValue">
+            <label class="form-check-label" for="cteckaOtiskuValue">
+              Čtečka otisku prstu
+            </label>
+          </div>
+          <!-- Ostatni -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="ostatniGrafika" class="form-control" aria-label="With textarea" placeholder="Wifi, bluetooth, usb, atd.." rows="16"></textarea>
+              </div>
+            </div>
+          </div>
+  
+  
+  
+          <button type="submit" id="btnSubmit" class="btn btn-primary mt-4">Zpracovat</button>
+  
+          <!--. Result -->
+          <h5 class="mt-5">B2B Text</h5>
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="16"></textarea>
+              </div>
+            </div>
+          </div>
+          <h5 class="mt-5">Krátký Text</h5>
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <div class="input-group input-group-sm mb-1">
+                <textarea id="kratkyTextResult" class="form-control" aria-label="kratky text" placeholder="Výsledek" rows="6"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <p class="male-pismo" id="kratkyTextPocet">Počet znaků: 0</p>
+          </div>
+
+        </form>
+        <!-- Konec -->
+      </div>
+    </div>  
+  </main>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">  
+  </script>
+  <script src="./js/notebookyVzor.js"></script>
+</body>
+</html>
