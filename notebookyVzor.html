@@ -58,7 +58,7 @@
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Model</span>
                 <input type="text" id="model" class="form-control" placeholder="Lenovo IdeaPad Slim 3" aria-label="model" aria-describedby="model">
-                <button class="btn btn-secondary" type="button" id="button-addon2">Copy</button>
+                <button class="btn btn-secondary" type="button" id="" onclick="copyModel()">Copy</button>
               </div>
             </div>
           </div>
@@ -68,19 +68,19 @@
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">PN</span> <!--todo PN musí napsat i text -->
                 <input type="text" id="pn" class="form-control" placeholder="82XJ0021MC" aria-label="pn" aria-describedby="pn">
-                <button class="btn btn-secondary" type="button" id="button-addon2">Copy</button>
+                <button class="btn btn-secondary" type="button" id="" onclick="copyPN()">Copy</button>
               </div>
             </div>
           </div>
           <!-- OS -->
           <div class="row">
             <div class="col-12 col-md-8">
-              <div class="input-group input-group-sm mb-1">
+              <div class="input-group input-group-sm mb-0">
                 <span class="input-group-text">Operační systém</span> <!--todo os musí napsat i text -->
                 <input type="text" id="os" class="form-control" placeholder="Windows 11 Home" aria-label="os" aria-describedby="os">
-                <span class="input-group-text">Bez OS? Nech prázdny</span> <!--todo os musí napsat i text -->
-
+                <!-- <span class="input-group-text">Bez OS? Nech prázdný</span> -->
               </div>
+              <p class="male-pismo mb-2 pt-0 m-0">(Nech prázdné pokud nemá OS)</p>
             </div>
           </div>
           <!-- Ostatní -->
@@ -147,7 +147,7 @@
           <div class="row">
             <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
-                <span class="input-group-text">Pamět RAM</span> <!--todo pamet musí napsat i text -->
+                <span class="input-group-text">Paměť RAM</span> <!--todo pamet musí napsat i text -->
                 <input type="text" id="pamet" class="form-control" placeholder="8" aria-label="pamet" aria-describedby="pamet">
                 <span class="input-group-text">GB</span>
               </div>
@@ -157,8 +157,10 @@
           <div class="row">
             <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Disk</span> <!--todo uloziste musí napsat i text -->
+                <input type="text" id="disk" class="form-control" value="SSD" aria-label="disk" aria-describedby="disk">
                 <span class="input-group-text">Uložiště</span> <!--todo uloziste musí napsat i text -->
-                <input type="text" id="uloziste" class="form-control" value="SSD" aria-label="uloziste" aria-describedby="uloziste">
+                <input type="text" id="uloziste" class="form-control" placeholder="512" aria-label="uloziste" aria-describedby="uloziste">
                 <span class="input-group-text">GB</span>
               </div>
             </div>
@@ -242,11 +244,12 @@
           <!-- Grafická karta -->
           <div class="row">
             <div class="col-12 col-md-10">
-              <div class="input-group input-group-sm mb-1">
+              <div class="input-group input-group-sm mb-0">
                 <input type="text" id="grafikaTyp" class="form-control" value="Integrovaná" aria-label="grafikaTyp" aria-describedby="grafikaTyp">
                 <span class="input-group-text">Grafická karta</span> <!--todo grafika musí napsat i text -->
                 <input type="text" id="grafika" class="form-control" placeholder="RTX 4050 6GB" aria-label="grafika" aria-describedby="grafika">
               </div>
+              <p class="male-pismo mb-2 pt-0 m-0">(Vymaž pokud není integrovaná)</p>
             </div>
           </div>
           <!-- Pamět grafiky -->
@@ -429,6 +432,7 @@
               <div class="input-group input-group-sm mb-1">
                 <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="32"></textarea>
               </div>
+              <button class="btn btn-secondary" type="button" id="" onclick="copyB2B()">Copy</button>
             </div>
           </div>
           <h5 class="mt-5">Krátký Text</h5>
@@ -437,6 +441,7 @@
               <div class="input-group input-group-sm mb-1">
                 <textarea id="kratkyTextResult" class="form-control" aria-label="kratky text" placeholder="Výsledek" rows="6"></textarea>
               </div>
+              <button class="btn btn-secondary" type="button" id="" onclick="copyKratky()">Copy</button>
             </div>
           </div>
           <div class="row">
