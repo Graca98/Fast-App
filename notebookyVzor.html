@@ -187,7 +187,9 @@
             <div class="col-12 col-md-4">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Rozlišení</span> <!--todo uhlopricka musí napsat i text -->
-                <input type="text" id="rozliseni" class="form-control" placeholder="1920 x 1080 IPS" aria-label="rozliseni" aria-describedby="rozliseni">
+                <input type="text" id="rozliseni" class="form-control" placeholder="1920 x 1080" aria-label="rozliseni" aria-describedby="rozliseni">
+                <span class="input-group-text">Typ</span> <!--todo uhlopricka musí napsat i text -->
+                <input type="text" id="rozliseniTyp" class="form-control" placeholder="IPS" aria-label="rozliseniTyp" aria-describedby="rozliseniTyp">
               </div>
             </div>
           </div>
@@ -230,8 +232,10 @@
                 <div class="input-group-text">
                   <input id="pametGrafikaValue" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
                 </div>
-                <span class="input-group-text">Paměť grafické karty</span> <!--todo grafika musí napsat i text -->
-                <input type="text" id="grafikaPamet" class="form-control" placeholder="6144 MB" aria-label="Text input with checkbox">
+                <span class="input-group-text">Paměť grafické karty</span>
+                <input type="text" id="grafikaPamet" class="form-control" placeholder="6144" aria-label="Text input with checkbox">
+                <span class="input-group-text">MB</span>
+
               </div>
             </div>
           </div>
@@ -281,11 +285,101 @@
               Čtečka otisku prstu
             </label>
           </div>
+          <!-- Wifi -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Wi-Fi</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="wifi" class="form-control" placeholder="6 (11x2x2)" aria-label="wifi" aria-describedby="wifi">
+              </div>
+            </div>
+          </div>
+          <!-- Bluetooth -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Bluetooth</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="bluetooth" class="form-control" placeholder="5.1" aria-label="Bluetooth" aria-describedby="Bluetooth">
+              </div>
+            </div>
+          </div>
           <!-- Ostatni -->
           <div class="row">
             <div class="col-12 col-md-4">
               <div class="input-group input-group-sm mb-1">
-                <textarea id="ostatniGrafika" class="form-control" aria-label="With textarea" placeholder="Wifi, bluetooth, usb, atd.." rows="16"></textarea>
+                <textarea id="ostatniSpecifikace" class="form-control" aria-label="With textarea" placeholder="Wifi, bluetooth, usb, atd.." rows="8"></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- Mechanika -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="mechanikaValue">
+            <label class="form-check-label" for="mechanikaValue">
+              Mechanika
+            </label>
+          </div>
+
+
+          <h6 class="mt-4">Barva a Baterie</h6>
+          <!-- barva -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Barva</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="barva" class="form-control" placeholder="modrá" aria-label="barva" aria-describedby="barva">
+              </div>
+            </div>
+          </div>
+          <!-- baterie -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Baterie (typ/kapacita)</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="baterie" class="form-control" placeholder="Li-ion 52,5" aria-label="baterie" aria-describedby="baterie">
+                <span class="input-group-text">WHrs</span> <!--todo jadra musí napsat i text -->
+              </div>
+            </div>
+          </div>
+
+
+          <h6 class="mt-4">Rozměry</h6>
+          <!-- vyska -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Výška</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="vyska" class="form-control" placeholder="1,55" aria-label="vyska" aria-describedby="vyska">
+                <span class="input-group-text">cm</span> <!--todo jadra musí napsat i text -->
+              </div>
+            </div>
+          </div>
+          <!-- sirka -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Šířka</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="sirka" class="form-control" placeholder="35,65" aria-label="sirka" aria-describedby="sirka">
+                <span class="input-group-text">cm</span> <!--todo jadra musí napsat i text -->
+              </div>
+            </div>
+          </div>
+          <!-- hloubka -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Hloubka</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="hloubka" class="form-control" placeholder="24,23" aria-label="hloubka" aria-describedby="hloubka">
+                <span class="input-group-text">cm</span> <!--todo jadra musí napsat i text -->
+              </div>
+            </div>
+          </div>
+          <!-- hmotnost -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Hmotnost</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="hmotnost" class="form-control" placeholder="1,5" aria-label="hmotnost" aria-describedby="hmotnost">
+                <span class="input-group-text">kg</span> <!--todo jadra musí napsat i text -->
               </div>
             </div>
           </div>
