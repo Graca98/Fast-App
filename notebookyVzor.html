@@ -74,10 +74,12 @@
           </div>
           <!-- OS -->
           <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Operační systém</span> <!--todo os musí napsat i text -->
                 <input type="text" id="os" class="form-control" placeholder="Windows 11 Home" aria-label="os" aria-describedby="os">
+                <span class="input-group-text">Bez OS? Nech prázdny</span> <!--todo os musí napsat i text -->
+
               </div>
             </div>
           </div>
@@ -212,6 +214,20 @@
               </div>
             </div>
           </div>
+          <!-- Obnovovací frekvence displeje -->
+          <!-- Je zde checkbox -->
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <div class="input-group mb-1">
+                <div class="input-group-text">
+                  <input id="frekvenceValue" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <span class="input-group-text">Obnovovací frekvence displeje</span>
+                <input type="text" id="frekvence" class="form-control" placeholder="144" aria-label="Text input with checkbox">
+                <span class="input-group-text">Hz</span>
+              </div>
+            </div>
+          </div>
           <!-- Ostatní -->
           <div class="row">
             <div class="col-12 col-md-6">
@@ -244,7 +260,6 @@
                 <span class="input-group-text">Paměť grafické karty</span>
                 <input type="text" id="grafikaPamet" class="form-control" placeholder="6144" aria-label="Text input with checkbox">
                 <span class="input-group-text">MB</span>
-
               </div>
             </div>
           </div>
@@ -349,6 +364,16 @@
               </div>
             </div>
           </div>
+          <!-- baterieVydrz -->
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Výdrž baterie</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="baterieVydrz" class="form-control" placeholder="7" aria-label="baterieVydrz" aria-describedby="baterieVydrz">
+                <span class="input-group-text">h</span> <!--todo jadra musí napsat i text -->
+              </div>
+            </div>
+          </div>
 
 
           <h6 class="mt-4">Rozměry</h6>
@@ -402,7 +427,7 @@
           <div class="row">
             <div class="col-12 col-md-10">
               <div class="input-group input-group-sm mb-1">
-                <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="16"></textarea>
+                <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="32"></textarea>
               </div>
             </div>
           </div>

@@ -24,6 +24,8 @@ let uhloprickaInput = document.getElementById("uhlopricka")
 let rozliseniInput = document.getElementById("rozliseni")
 let rozliseniTypInput = document.getElementById("rozliseniTyp")
 let svitivostInput = document.getElementById("svitivost")
+let frekvenceValueCheckbox = document.getElementById("frekvenceValue") // checkbox true/false
+let frekvenceInput = document.getElementById("frekvence")
 let ostatniDisplejInput = document.getElementById("ostatniDisplej")
 // Grafika
 let grafikaTypInput = document.getElementById("grafikaTyp")
@@ -44,6 +46,7 @@ let mechanikaValue = document.getElementById("mechanikaValue")
 // Barva a bateria
 let barvaInput = document.getElementById("barva")
 let baterieInput = document.getElementById("baterie")
+let baterieVydrzInput = document.getElementById("baterieVydrz")
 // Rozměry
 let vyskaInput = document.getElementById("vyska")
 let sirkaInput = document.getElementById("sirka")
@@ -64,7 +67,8 @@ btnSubmit.addEventListener("click", function(e) {
   let typ = typInput.value;
   let model = modelInput.value;
   let pn = pnInput.value;
-  let os = osInput.value;
+  let os = osInput.value == "" ? `Bez operačního systému` : `Operační systém ${osInput.value}`
+  let osKratky = osInput.value == "" ? `Bez os` : `Operační systém ${osInput.value}`
   let ostatniHlavicka = ""; //? Ponechá se prázdné jako volitelné
 
   // Procesor
@@ -84,6 +88,8 @@ btnSubmit.addEventListener("click", function(e) {
   let rozliseni = rozliseniInput.value
   let rozliseniTyp = rozliseniTypInput.value
   let svitivost = svitivostInput.value
+  let frekvenceValue = frekvenceValueCheckbox.checked
+  let frekvence = "" // Hodnota v IF dole
   let ostatniDisplej = ""
   // Grafika
   let grafikaTyp = grafikaTypInput.value
@@ -93,11 +99,12 @@ btnSubmit.addEventListener("click", function(e) {
   let ostatniGrafika = ""
   // Specifiakce
   let wifi = wifiInput.value
-  let bluetooth = wifiInput.value
+  let bluetooth = bluetoothInput.value
   let ostatniSpecifikace = ""
   // Barva a bateria
   let barva = barvaInput.value
   let baterie = baterieInput.value
+  let baterieVydrz = baterieVydrzInput.value
   // Rozměry
   let vyska = vyskaInput.value
   let sirka = sirkaInput.value
@@ -128,17 +135,19 @@ btnSubmit.addEventListener("click", function(e) {
 
   // Pokud je Checkbox zaskrtnuty, vykona se podmínka
   if (pametGrafikaValue) {
-    console.log("test")
     grafikaPamet = `\nPaměť grafické karty ${grafikaPametInput.value} MB`
+  }
+  if (frekvenceValue) {
+    frekvence = `\nObnovovací frekvence displeje ${frekvenceInput.value} Hz`
   }
 
 
   //. Uložení bloku textu do jedné proměnné
-  let hlavickaText = `${typ}\n${model}\nPN ${pn}\nOperační systém ${os}${ostatniHlavicka}`
+  let hlavickaText = `${typ}\n${model}\nPN ${pn}\n${os}${ostatniHlavicka}`
   let procesorText = `Procesor ${procesor}\nTaktovací frekvence procesoru (typická) ${typicka} GHz\nTaktovací frekvence procesoru (maximální) ${maximalni} GHz\nPočet jader procesoru ${jadra}${ostatniProcesor}`
-  let pametText = `Pamět RAM ${pamet} GB\nÚložiště ${uloziste} GB${ostatniPamet}`
-  let displejText = `${displejTyp} displej\nUhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\nSvítivost displeje ${svitivost} Nitů${ostatniDisplej}`
-  let grafikaText = `${grafikaTyp} grafická karta ${grafika}${grafikaPamet}${ostatniGrafika}`
+  let pametText = `Paměť RAM ${pamet} GB\nÚložiště ${uloziste} GB${ostatniPamet}`
+  let displejText = `${displejTyp} displej\nUhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\nSvítivost displeje ${svitivost} Nitů${frekvence}${ostatniDisplej}`
+  let grafikaText = `${grafikaTyp} Grafická karta ${grafika}${grafikaPamet}${ostatniGrafika}`
   // Specifikace
     // checkboxy true/false
     let touchPad = touchpadValue.checked ? `\nPolohovací zařízení TouchPad` : ""
@@ -148,7 +157,7 @@ btnSubmit.addEventListener("click", function(e) {
     let cteckaOtisku = cteckaOtiskuValue.checked ? `\nČtečka otisku prstu` : ""
     let mechanika = mechanikaValue.checked ? `\nOptická mechanika` : "\nBez optické mechaniky"
   let specifikaceText = `${touchPad}${podsvicenaKlavesnice}${numerickaKlavesnice}${webcamera}${cteckaOtisku}\nWi-Fi ${wifi}\nBluetooth ${bluetooth}${ostatniSpecifikace}${mechanika}`
-  let barvaABaterieText = `Barva ${barva}\nBaterie (typ/kapacita) ${baterie} WHrs`
+  let barvaABaterieText = `Barva ${barva}\nBaterie (typ/kapacita) ${baterie} WHrs\nVýdrž baterie ${baterieVydrz} h`
   let rozmeryText = `Rozměry (V×Š×H) ${vyska} x ${sirka} x ${hloubka} cm\nHmotnost ${hmotnost} kg`
 
 
@@ -157,7 +166,7 @@ btnSubmit.addEventListener("click", function(e) {
   b2bText.value = `${hlavickaText}\n\n${procesorText}\n\n${pametText}\n\n${displejText}\n\n${grafikaText}\n${specifikaceText}\n\n${barvaABaterieText}\n\n${rozmeryText}`
 
   // Krátky text
-  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, grafická karta ${grafika}, RAM ${pamet} GB, paměť ${uloziste} GB, operační systém ${os}`
+  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, grafická karta ${grafika}, RAM ${pamet} GB, paměť ${uloziste} GB, ${osKratky}`
   // Počítadlo
   kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
 });
