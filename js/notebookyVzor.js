@@ -60,38 +60,38 @@ btnSubmit.addEventListener("click", function(e) {
   //. Proměnné
   // Hlavička
   //todo Odstranit 'value = "hodnota"'
-  let typ = typInput.value = "Notebook";
-  let model = modelInput.value = "Lenovo LOQ 15IRH8";
-  let pn = pnInput.value = "82XV005KCK";
-  let os = osInput.value = "Windows 11 Home";
+  let typ = typInput.value;
+  let model = modelInput.value;
+  let pn = pnInput.value;
+  let os = osInput.value;
   let ostatniHlavicka = ""; //? Ponechá se prázdné jako volitelné
 
   // Procesor
-  let procesor = procesorInput.value = "Intel Core i5-13420H"
-  let typicka = typickaInput.value = "2.1"
-  let maximalni = maximalniInput.value = "4,6"
-  let jadra = jadraInput.value = "8"
-  let ostatniProcesor = ""
+  let procesor = procesorInput.value
+  let typicka = typickaInput.value
+  let maximalni = maximalniInput.value
+  let jadra = jadraInput.value
+  let ostatniProcesor
 
   // Pamet
-  let pamet = pametInput.value = "16"
-  let uloziste = ulozisteInput.value = "SSD 512"
+  let pamet = pametInput.value
+  let uloziste = ulozisteInput.value
   let ostatniPamet = ""
   // Displej
-  let uhlopricka = uhloprickaInput.value = "15,6"
-  let rozliseni = rozliseniInput.value = "1920 x 1080"
+  let uhlopricka = uhloprickaInput.value
+  let rozliseni = rozliseniInput.value
   let rozliseniTyp = rozliseniTypInput.value
-  let svitivost = svitivostInput.value = "300"
+  let svitivost = svitivostInput.value
   let ostatniDisplej = ""
   // Grafika
-  let grafikaTyp = grafikaTypInput.value = "Dedikovaná"
-  let grafika = grafikaInput.value = "NVIDIA RTX 4050 6GB"
+  let grafikaTyp = grafikaTypInput.value
+  let grafika = grafikaInput.value
   let pametGrafikaValue = pametGrafikaValueCheckbox.checked
   let grafikaPamet = "" // Hodnota v IF dole
   let ostatniGrafika = ""
   // Specifiakce
-  let wifi = wifiInput.value = "6"
-  let bluetooth = wifiInput.value = "5,1"
+  let wifi = wifiInput.value
+  let bluetooth = wifiInput.value
   let ostatniSpecifikace = ""
   // Barva a bateria
   let barva = barvaInput.value
