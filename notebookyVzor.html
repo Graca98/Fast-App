@@ -45,16 +45,16 @@
         <form id="myForm">
           <h6>Hlavička</h6>
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-sm-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Typ</span>
-                <input type="text" id="typ" class="form-control" required placeholder="Notebook" aria-label="ntbk" aria-describedby="typ">
+                <input type="text" id="typ" class="form-control" required value="Notebook" aria-label="ntbk" aria-describedby="typ">
               </div>
             </div>
           </div>
             <!-- model -->
           <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Model</span>
                 <input type="text" id="model" class="form-control" placeholder="Lenovo IdeaPad Slim 3" aria-label="model" aria-describedby="model">
@@ -64,7 +64,7 @@
           </div>
           <!-- PN -->
           <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">PN</span> <!--todo PN musí napsat i text -->
                 <input type="text" id="pn" class="form-control" placeholder="82XJ0021MC" aria-label="pn" aria-describedby="pn">
@@ -74,7 +74,7 @@
           </div>
           <!-- OS -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Operační systém</span> <!--todo os musí napsat i text -->
                 <input type="text" id="os" class="form-control" placeholder="Windows 11 Home" aria-label="os" aria-describedby="os">
@@ -83,7 +83,7 @@
           </div>
           <!-- Ostatní -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <textarea id="ostatniHlavicka" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
               </div>
@@ -94,7 +94,7 @@
           <h6 class="mt-4">Procesor</h6>
           <!-- Procesor -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Procesor</span> <!--todo procesor musí napsat i text -->
                 <input type="text" id="procesor" class="form-control" placeholder="Intel Core i5-13420H" aria-label="procesor" aria-describedby="procesor">
@@ -103,7 +103,7 @@
           </div>
           <!-- Taktovací typická -->
           <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text" >Taktovací frekvence procesoru (typická)</span> <!--todo typicka musí napsat i text -->
                 <input type="text" id="typicka" class="form-control" placeholder="2,1" aria-label="typicka" aria-describedby="typicka">
@@ -113,7 +113,7 @@
           </div>
           <!-- Taktovací maximální -->
           <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Taktovací frekvence procesoru (maximální)</span> <!--todo maximalni musí napsat i text -->
                 <input type="text" id="maximalni" class="form-control" placeholder="4,6" aria-label="maximalni" aria-describedby="maximalni">
@@ -123,7 +123,7 @@
           </div>
           <!-- Jadra -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Počet jader procesoru</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="jadra" class="form-control" placeholder="8" aria-label="jadra" aria-describedby="jadra">
@@ -132,7 +132,7 @@
           </div>
           <!-- Ostatní -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <textarea id="ostatniProcesor" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
               </div>
@@ -143,7 +143,7 @@
           <h6 class="mt-4">Pamět</h6>
           <!-- pamet -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Pamět RAM</span> <!--todo pamet musí napsat i text -->
                 <input type="text" id="pamet" class="form-control" placeholder="8" aria-label="pamet" aria-describedby="pamet">
@@ -153,17 +153,17 @@
           </div>
           <!-- uloziste -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Uložiště</span> <!--todo uloziste musí napsat i text -->
-                <input type="text" id="uloziste" class="form-control" placeholder="SSD 512" aria-label="uloziste" aria-describedby="uloziste">
+                <input type="text" id="uloziste" class="form-control" value="SSD" aria-label="uloziste" aria-describedby="uloziste">
                 <span class="input-group-text">GB</span>
               </div>
             </div>
           </div>
           <!-- Ostatní -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <textarea id="ostatniPamet" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
               </div>
@@ -174,7 +174,7 @@
           <h6 class="mt-4">Displej</h6>
           <!-- uhlopricka -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Uhlopříčka</span> <!--todo uhlopricka musí napsat i text -->
                 <input type="text" id="uhlopricka" class="form-control" placeholder="15,6" aria-label="uhlopricka" aria-describedby="uhlopricka">
@@ -184,7 +184,7 @@
           </div>
           <!-- Rozlišení -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-8">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Rozlišení</span> <!--todo uhlopricka musí napsat i text -->
                 <input type="text" id="rozliseni" class="form-control" placeholder="1920 x 1080" aria-label="rozliseni" aria-describedby="rozliseni">
@@ -195,7 +195,7 @@
           </div>
           <!-- Svítivost -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Svítivost displeje</span> <!--todo svitivost musí napsat i text -->
                 <input type="text" id="svitivost" class="form-control" placeholder="300" aria-label="svitivost" aria-describedby="svitivost">
@@ -205,7 +205,7 @@
           </div>
           <!-- Ostatní -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <textarea id="ostatniDisplej" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
               </div>
@@ -216,7 +216,7 @@
           <h6 class="mt-4">Grafika</h6>
           <!-- Grafická karta -->
           <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-10">
               <div class="input-group input-group-sm mb-1">
                 <input type="text" id="grafikaTyp" class="form-control" value="Integrovaná" aria-label="grafikaTyp" aria-describedby="grafikaTyp">
                 <span class="input-group-text">Grafická karta</span> <!--todo grafika musí napsat i text -->
@@ -241,7 +241,7 @@
           </div>
           <!-- Ostatní -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <textarea id="ostatniGrafika" class="form-control" aria-label="With textarea" placeholder="Ostatní" rows="1"></textarea>
               </div>
@@ -287,25 +287,25 @@
           </div>
           <!-- Wifi -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Wi-Fi</span> <!--todo jadra musí napsat i text -->
-                <input type="text" id="wifi" class="form-control" placeholder="6 (11x2x2)" aria-label="wifi" aria-describedby="wifi">
+                <input type="text" id="wifi" class="form-control" value="6 (11x2x2)" aria-label="wifi" aria-describedby="wifi">
               </div>
             </div>
           </div>
           <!-- Bluetooth -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Bluetooth</span> <!--todo jadra musí napsat i text -->
-                <input type="text" id="bluetooth" class="form-control" placeholder="5.1" aria-label="Bluetooth" aria-describedby="Bluetooth">
+                <input type="text" id="bluetooth" class="form-control" value="5.1" aria-label="Bluetooth" aria-describedby="Bluetooth">
               </div>
             </div>
           </div>
           <!-- Ostatni -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <textarea id="ostatniSpecifikace" class="form-control" aria-label="With textarea" placeholder="Wifi, bluetooth, usb, atd.." rows="8"></textarea>
               </div>
@@ -323,7 +323,7 @@
           <h6 class="mt-4">Barva a Baterie</h6>
           <!-- barva -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Barva</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="barva" class="form-control" placeholder="modrá" aria-label="barva" aria-describedby="barva">
@@ -332,7 +332,7 @@
           </div>
           <!-- baterie -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Baterie (typ/kapacita)</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="baterie" class="form-control" placeholder="Li-ion 52,5" aria-label="baterie" aria-describedby="baterie">
@@ -345,7 +345,7 @@
           <h6 class="mt-4">Rozměry</h6>
           <!-- vyska -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Výška</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="vyska" class="form-control" placeholder="1,55" aria-label="vyska" aria-describedby="vyska">
@@ -355,7 +355,7 @@
           </div>
           <!-- sirka -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Šířka</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="sirka" class="form-control" placeholder="35,65" aria-label="sirka" aria-describedby="sirka">
@@ -365,7 +365,7 @@
           </div>
           <!-- hloubka -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Hloubka</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="hloubka" class="form-control" placeholder="24,23" aria-label="hloubka" aria-describedby="hloubka">
@@ -375,7 +375,7 @@
           </div>
           <!-- hmotnost -->
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Hmotnost</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="hmotnost" class="form-control" placeholder="1,5" aria-label="hmotnost" aria-describedby="hmotnost">
@@ -391,7 +391,7 @@
           <!--. Result -->
           <h5 class="mt-5">B2B Text</h5>
           <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-10">
               <div class="input-group input-group-sm mb-1">
                 <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="16"></textarea>
               </div>
@@ -399,7 +399,7 @@
           </div>
           <h5 class="mt-5">Krátký Text</h5>
           <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-10">
               <div class="input-group input-group-sm mb-1">
                 <textarea id="kratkyTextResult" class="form-control" aria-label="kratky text" placeholder="Výsledek" rows="6"></textarea>
               </div>
