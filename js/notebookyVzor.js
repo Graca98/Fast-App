@@ -18,6 +18,13 @@ let ostatniProcesorInput = document.getElementById("ostatniProcesor")
 let pametInput = document.getElementById("pamet")
 let ulozisteInput = document.getElementById("uloziste")
 let ostatniPametInput = document.getElementById("ostatniPamet")
+let uhloprickaInput = document.getElementById("uhlopricka")
+let rozliseniInput = document.getElementById("rozliseni")
+let svitivostInput = document.getElementById("svitivost")
+let ostatniDisplejInput = document.getElementById("ostatniDisplej")
+let grafikaTypInput = document.getElementById("grafikaTyp")
+let grafikaInput = document.getElementById("grafika")
+
 
   
 btnSubmit.addEventListener("click", function(e) {
@@ -27,7 +34,7 @@ btnSubmit.addEventListener("click", function(e) {
   //. Proměnné
   // Hlavička
   //todo Odstranit 'value = "hodnota"'
-  let typ = typInput.value /* = "Notebook"; */
+  let typ = typInput.value = "Notebook";
   let model = modelInput.value = "Lenovo LOQ 15IRH8";
   let pn = pnInput.value = "82XV005KCK";
   let os = osInput.value = "Windows 11 Home";
@@ -44,6 +51,14 @@ btnSubmit.addEventListener("click", function(e) {
   let pamet = pametInput.value = "16"
   let uloziste = ulozisteInput.value = "SSD 512"
   let ostatniPamet = ""
+  // Displej
+  let uhlopricka = uhloprickaInput.value = "15,6"
+  let rozliseni = rozliseniInput.value = "1920 x 1080 IPS"
+  let svitivost = svitivostInput.value = "300"
+  let ostatniDisplej = ""
+  // Grafika
+  let grafikaTyp = grafikaTypInput.value = "Dedikovaná"
+  let grafika = grafikaInput.value = "NVIDIA RTX 4050 6GB"
 
 
   //. If podmínky na "ostatní"
@@ -57,20 +72,25 @@ btnSubmit.addEventListener("click", function(e) {
   if (ostatniPametInput.value != "") {
     ostatniPamet = `\n${ostatniPametInput.value}`
   }
+  if (ostatniDisplejInput.value != "") {
+    ostatniDisplej = `\n${ostatniDisplejInput.value}`
+  }
 
 
   //. Uložení bloku textu do jedné proměnné
   let hlavickaText = `${typ}\n${model}\nPN ${pn}\nOperační systém ${os}${ostatniHlavicka}`
   let procesorText = `Procesor ${procesor}\nTaktovací frekvence procesoru (typická) ${typicka} GHz\nTaktovací frekvence procesoru (maximální) ${maximalni} GHz\nPočet jader procesoru ${jadra}${ostatniProcesor}`
   let pametText = `Pamět RAM ${pamet} GB\nÚložiště ${uloziste} GB${ostatniPamet}`
+  let displejText = `Uhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni}\nSvítivost displeje ${svitivost} Nitů${ostatniDisplej}`
+  let grafikaText = `${grafikaTyp} grafická karta ${grafika}`
 
 
   //. Vypsání uložených bloků textů zpět do stránky
   // B2B Text
-  b2bText.value = `${hlavickaText}\n\n${procesorText}\n\n${pametText}`
+  b2bText.value = `${hlavickaText}\n\n${procesorText}\n\n${pametText}\n\n${displejText}\n\n${grafikaText}`
 
   // Krátky text
-  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej 1920x1080 15,6" IPS, grafická karta NVIDIA GeForce RTX 3050 6 GB, RAM ${pamet} GB, paměť ${uloziste} GB, operační systém ${os}`
+  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej ${rozliseni} ${uhlopricka}", grafická karta ${grafika}, RAM ${pamet} GB, paměť ${uloziste} GB, operační systém ${os}`
   // Počítadlo
   kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
 });
