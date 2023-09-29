@@ -16,6 +16,7 @@ let jadraInput = document.getElementById("jadra")
 let ostatniProcesorInput = document.getElementById("ostatniProcesor")
 // Pamet
 let pametInput = document.getElementById("pamet")
+let diskInput = document.getElementById("disk")
 let ulozisteInput = document.getElementById("uloziste")
 let ostatniPametInput = document.getElementById("ostatniPamet")
 // Displej
@@ -53,8 +54,19 @@ let sirkaInput = document.getElementById("sirka")
 let hloubkaInput = document.getElementById("hloubka")
 let hmotnostInput = document.getElementById("hmotnost")
 
-
-
+// Zkopíruje text buttonu
+function copyModel() {
+  navigator.clipboard.writeText(modelInput.value.trim())
+}
+function copyPN() {
+  navigator.clipboard.writeText(pnInput.value.trim())
+}
+function copyB2B() {
+  navigator.clipboard.writeText(b2bText.value.trim())
+}
+function copyKratky() {
+  navigator.clipboard.writeText(kratkyTextResult.value.trim())
+}
 
   
 btnSubmit.addEventListener("click", function(e) {
@@ -64,73 +76,75 @@ btnSubmit.addEventListener("click", function(e) {
   //. Proměnné
   // Hlavička
   //todo Odstranit 'value = "hodnota"'
-  let typ = typInput.value;
-  let model = modelInput.value;
-  let pn = pnInput.value;
+  let typ = typInput.value.trim()
+  let model = modelInput.value.trim()
+  let pn = pnInput.value.trim()
   let os = osInput.value == "" ? `Bez operačního systému` : `Operační systém ${osInput.value}`
   let osKratky = osInput.value == "" ? `Bez os` : `Operační systém ${osInput.value}`
   let ostatniHlavicka = ""; //? Ponechá se prázdné jako volitelné
 
   // Procesor
-  let procesor = procesorInput.value
-  let typicka = typickaInput.value
-  let maximalni = maximalniInput.value
-  let jadra = jadraInput.value
+  let procesor = procesorInput.value.trim()
+  let typicka = typickaInput.value.trim()
+  let maximalni = maximalniInput.value.trim()
+  let jadra = jadraInput.value.trim()
   let ostatniProcesor = ""
 
   // Pamet
-  let pamet = pametInput.value
-  let uloziste = ulozisteInput.value
+  let pamet = pametInput.value.trim()
+  let disk = diskInput.value.trim()
+  let uloziste = ulozisteInput.value.trim()
   let ostatniPamet = ""
   // Displej
-  let displejTyp = displejTypInput.value
-  let uhlopricka = uhloprickaInput.value
-  let rozliseni = rozliseniInput.value
-  let rozliseniTyp = rozliseniTypInput.value
-  let svitivost = svitivostInput.value
+  let displejTyp = displejTypInput.value.trim()
+  let uhlopricka = uhloprickaInput.value.trim()
+  let rozliseni = rozliseniInput.value.trim()
+  let rozliseniTyp = rozliseniTypInput.value.trim()
+  let svitivost = svitivostInput.value.trim()
   let frekvenceValue = frekvenceValueCheckbox.checked
   let frekvence = "" // Hodnota v IF dole
   let ostatniDisplej = ""
   // Grafika
-  let grafikaTyp = grafikaTypInput.value
-  let grafika = grafikaInput.value
+  let grafikaTyp = grafikaTypInput.value.trim() == "" ? `Grafická karta` : `Integrovaná grafická karta`
+  let grafikaTypKratky = grafikaTypInput.value.trim() == "" ? `grafická karta` : `grafická karta`
+  let grafika = grafikaInput.value.trim()
   let pametGrafikaValue = pametGrafikaValueCheckbox.checked
   let grafikaPamet = "" // Hodnota v IF dole
   let ostatniGrafika = ""
   // Specifiakce
-  let wifi = wifiInput.value
-  let bluetooth = bluetoothInput.value
+  let wifi = wifiInput.value.trim()
+  let bluetooth = bluetoothInput.value.trim()
   let ostatniSpecifikace = ""
   // Barva a bateria
-  let barva = barvaInput.value
-  let baterie = baterieInput.value
-  let baterieVydrz = baterieVydrzInput.value
+  let barva = barvaInput.value.trim()
+  let baterie = baterieInput.value.trim()
+  let baterieVydrz = baterieVydrzInput.value.trim()
   // Rozměry
-  let vyska = vyskaInput.value
-  let sirka = sirkaInput.value
-  let hloubka = hloubkaInput.value
-  let hmotnost = hmotnostInput.value
+  let vyska = vyskaInput.value.trim()
+  let sirka = sirkaInput.value.trim()
+  let hloubka = hloubkaInput.value.trim()
+  let hmotnost = hmotnostInput.value.trim()
 
 
   //. If podmínky na "ostatní"
   // Pokud se vyplní "Ostatní" tak se zařadí do textu
   if (ostatniHlavickaInput.value != "") {
-    ostatniHlavicka = `\n${ostatniHlavickaInput.value}`
+    ostatniHlavicka = `\n${ostatniHlavickaInput.value.trim()}`
   }
   if (ostatniProcesorInput.value != "") {
-    ostatniProcesor = `\n${ostatniProcesorInput.value}`
+    ostatniProcesor = `\n${ostatniProcesorInput.value.trim()}`
   }
   if (ostatniPametInput.value != "") {
-    ostatniPamet = `\n${ostatniPametInput.value}`
+    ostatniPamet = `\n${ostatniPametInput.value.trim()}`
   }
   if (ostatniDisplejInput.value != "") {
-    ostatniDisplej = `\n${ostatniDisplejInput.value}`
+    ostatniDisplej = `\n${ostatniDisplejInput.value.trim()}`
   }
   if (ostatniGrafikaInput.value != "") {
-    ostatniGrafika = `\n${ostatniGrafikaInput.value}`
+    ostatniGrafika = `\n${ostatniGrafikaInput.value.trim()}`
   }
   if (ostatniSpecifikaceInput.value != "") {
-    ostatniSpecifikace = `\n${ostatniSpecifikaceInput.value}`
+    ostatniSpecifikace = `\n${ostatniSpecifikaceInput.value.trim()}`
   }
 
   // Pokud je Checkbox zaskrtnuty, vykona se podmínka
@@ -145,9 +159,9 @@ btnSubmit.addEventListener("click", function(e) {
   //. Uložení bloku textu do jedné proměnné
   let hlavickaText = `${typ}\n${model}\nPN ${pn}\n${os}${ostatniHlavicka}`
   let procesorText = `Procesor ${procesor}\nTaktovací frekvence procesoru (typická) ${typicka} GHz\nTaktovací frekvence procesoru (maximální) ${maximalni} GHz\nPočet jader procesoru ${jadra}${ostatniProcesor}`
-  let pametText = `Paměť RAM ${pamet} GB\nÚložiště ${uloziste} GB${ostatniPamet}`
+  let pametText = `Paměť RAM ${pamet} GB\nÚložiště ${disk} ${uloziste} GB${ostatniPamet}`
   let displejText = `${displejTyp} displej\nUhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\nSvítivost displeje ${svitivost} Nitů${frekvence}${ostatniDisplej}`
-  let grafikaText = `${grafikaTyp} Grafická karta ${grafika}${grafikaPamet}${ostatniGrafika}`
+  let grafikaText = `${grafikaTyp} ${grafika}${grafikaPamet}${ostatniGrafika}`
   // Specifikace
     // checkboxy true/false
     let touchPad = touchpadValue.checked ? `\nPolohovací zařízení TouchPad` : ""
@@ -166,7 +180,7 @@ btnSubmit.addEventListener("click", function(e) {
   b2bText.value = `${hlavickaText}\n\n${procesorText}\n\n${pametText}\n\n${displejText}\n\n${grafikaText}\n${specifikaceText}\n\n${barvaABaterieText}\n\n${rozmeryText}`
 
   // Krátky text
-  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, grafická karta ${grafika}, RAM ${pamet} GB, paměť ${uloziste} GB, ${osKratky}`
+  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, ${grafikaTypKratky} ${grafika}, RAM ${pamet} GB, paměť ${uloziste} GB, ${osKratky}`
   // Počítadlo
   kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
 });
