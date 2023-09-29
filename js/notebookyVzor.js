@@ -24,6 +24,7 @@ let svitivostInput = document.getElementById("svitivost")
 let ostatniDisplejInput = document.getElementById("ostatniDisplej")
 let grafikaTypInput = document.getElementById("grafikaTyp")
 let grafikaInput = document.getElementById("grafika")
+let pametGrafikaValueCheckbox = document.getElementById("pametGrafikaValue")
 
 
   
@@ -59,6 +60,8 @@ btnSubmit.addEventListener("click", function(e) {
   // Grafika
   let grafikaTyp = grafikaTypInput.value = "Dedikovaná"
   let grafika = grafikaInput.value = "NVIDIA RTX 4050 6GB"
+  let pametGrafikaValue = pametGrafikaValueCheckbox.checked
+  console.log(pametGrafikaValue)
   //todo dodělat zbytek
 
 
@@ -75,6 +78,11 @@ btnSubmit.addEventListener("click", function(e) {
   }
   if (ostatniDisplejInput.value != "") {
     ostatniDisplej = `\n${ostatniDisplejInput.value}`
+  }
+
+  // test checkboxu
+  if (pametGrafikaValue) {
+    console.log("test")
   }
 
 
