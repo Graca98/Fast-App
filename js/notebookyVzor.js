@@ -71,7 +71,7 @@ btnSubmit.addEventListener("click", function(e) {
   let typicka = typickaInput.value
   let maximalni = maximalniInput.value
   let jadra = jadraInput.value
-  let ostatniProcesor
+  let ostatniProcesor = ""
 
   // Pamet
   let pamet = pametInput.value
@@ -135,7 +135,7 @@ btnSubmit.addEventListener("click", function(e) {
   let hlavickaText = `${typ}\n${model}\nPN ${pn}\nOperační systém ${os}${ostatniHlavicka}`
   let procesorText = `Procesor ${procesor}\nTaktovací frekvence procesoru (typická) ${typicka} GHz\nTaktovací frekvence procesoru (maximální) ${maximalni} GHz\nPočet jader procesoru ${jadra}${ostatniProcesor}`
   let pametText = `Pamět RAM ${pamet} GB\nÚložiště ${uloziste} GB${ostatniPamet}`
-  let displejText = `Uhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\nSvítivost displeje ${svitivost} Nitů${ostatniDisplej}`
+  let displejText = `Displej\nUhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\nSvítivost displeje ${svitivost} Nitů${ostatniDisplej}`
   let grafikaText = `${grafikaTyp} grafická karta ${grafika}${grafikaPamet}${ostatniGrafika}`
   // Specifikace
     // checkboxy true/false
