@@ -19,6 +19,7 @@ let pametInput = document.getElementById("pamet")
 let ulozisteInput = document.getElementById("uloziste")
 let ostatniPametInput = document.getElementById("ostatniPamet")
 // Displej
+let displejTypInput = document.getElementById("displejTyp")
 let uhloprickaInput = document.getElementById("uhlopricka")
 let rozliseniInput = document.getElementById("rozliseni")
 let rozliseniTypInput = document.getElementById("rozliseniTyp")
@@ -78,6 +79,7 @@ btnSubmit.addEventListener("click", function(e) {
   let uloziste = ulozisteInput.value
   let ostatniPamet = ""
   // Displej
+  let displejTyp = displejTypInput.value
   let uhlopricka = uhloprickaInput.value
   let rozliseni = rozliseniInput.value
   let rozliseniTyp = rozliseniTypInput.value
@@ -135,7 +137,7 @@ btnSubmit.addEventListener("click", function(e) {
   let hlavickaText = `${typ}\n${model}\nPN ${pn}\nOperační systém ${os}${ostatniHlavicka}`
   let procesorText = `Procesor ${procesor}\nTaktovací frekvence procesoru (typická) ${typicka} GHz\nTaktovací frekvence procesoru (maximální) ${maximalni} GHz\nPočet jader procesoru ${jadra}${ostatniProcesor}`
   let pametText = `Pamět RAM ${pamet} GB\nÚložiště ${uloziste} GB${ostatniPamet}`
-  let displejText = `Displej\nUhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\nSvítivost displeje ${svitivost} Nitů${ostatniDisplej}`
+  let displejText = `${displejTyp} displej\nUhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\nSvítivost displeje ${svitivost} Nitů${ostatniDisplej}`
   let grafikaText = `${grafikaTyp} grafická karta ${grafika}${grafikaPamet}${ostatniGrafika}`
   // Specifikace
     // checkboxy true/false
