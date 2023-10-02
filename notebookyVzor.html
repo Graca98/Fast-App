@@ -11,7 +11,7 @@
 <body>
   <!--! HEADER -->
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary p-1 px-3">
+    <nav class="navbar navbar-expand-lg bg-primary p-1 px-3">
       <div class="container-fluid">
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -176,15 +176,6 @@
   
   
           <h6 class="mt-4">Displej</h6>
-          <!-- displejTyp -->
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="input-group input-group-sm mb-1">
-                <input type="text" id="displejTyp" class="form-control" placeholder="Lesklý" aria-label="displejTyp" aria-describedby="displejTyp">
-                <span class="input-group-text">Displej</span> <!--todo displejTyp musí napsat i text -->
-              </div>
-            </div>
-          </div>
           <!-- uhlopricka -->
           <div class="row">
             <div class="col-12 col-md-6">
@@ -203,6 +194,15 @@
                 <input type="text" id="rozliseni" class="form-control" placeholder="1920 x 1080" aria-label="rozliseni" aria-describedby="rozliseni">
                 <span class="input-group-text">Typ</span> <!--todo uhlopricka musí napsat i text -->
                 <input type="text" id="rozliseniTyp" class="form-control" placeholder="IPS" aria-label="rozliseniTyp" aria-describedby="rozliseniTyp">
+              </div>
+            </div>
+          </div>
+          <!-- displejTyp -->
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-sm mb-1">
+                <input type="text" id="displejTyp" class="form-control" placeholder="Lesklý" aria-label="displejTyp" aria-describedby="displejTyp">
+                <span class="input-group-text">Displej</span> <!--todo displejTyp musí napsat i text -->
               </div>
             </div>
           </div>
@@ -261,8 +261,8 @@
                   <input id="pametGrafikaValue" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
                 </div>
                 <span class="input-group-text">Paměť grafické karty</span>
-                <input type="text" id="grafikaPamet" class="form-control" placeholder="6144" aria-label="Text input with checkbox">
-                <span class="input-group-text">MB</span>
+                <input type="text" id="grafikaPamet" class="form-control" placeholder="6GB GDDR6" aria-label="Text input with checkbox">
+                <!-- <span class="input-group-text">MB</span> -->
               </div>
             </div>
           </div>
@@ -347,16 +347,7 @@
           </div>
 
 
-          <h6 class="mt-4">Barva a Baterie</h6>
-          <!-- barva -->
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="input-group input-group-sm mb-1">
-                <span class="input-group-text">Barva</span> <!--todo jadra musí napsat i text -->
-                <input type="text" id="barva" class="form-control" placeholder="modrá" aria-label="barva" aria-describedby="barva">
-              </div>
-            </div>
-          </div>
+          <h6 class="mt-4">Baterie</h6>
           <!-- baterie -->
           <div class="row">
             <div class="col-12 col-md-6">
@@ -417,6 +408,15 @@
                 <span class="input-group-text">Hmotnost</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="hmotnost" class="form-control" placeholder="1,5" aria-label="hmotnost" aria-describedby="hmotnost">
                 <span class="input-group-text">kg</span> <!--todo jadra musí napsat i text -->
+              </div>
+            </div>
+          </div>
+          <!-- barva -->
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Barva</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="barva" class="form-control" placeholder="modrá" aria-label="barva" aria-describedby="barva">
               </div>
             </div>
           </div>
