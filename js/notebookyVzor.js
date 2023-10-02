@@ -180,7 +180,7 @@ btnSubmit.addEventListener("click", function(e) {
   b2bText.value = `${hlavickaText}\n\n${procesorText}\n\n${pametText}\n\n${displejText}\n\n${grafikaText}\n${specifikaceText}\n\n${barvaABaterieText}\n\n${rozmeryText}`
 
   // Krátky text
-  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, ${grafikaTypKratky} ${grafika}, RAM ${pamet} GB, paměť ${uloziste} GB, ${osKratky}`
+  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, ${grafikaTypKratky} ${grafika}, RAM ${pamet} GB, paměť ${disk} ${uloziste} GB, ${osKratky}`
   // Počítadlo
   kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
 });
