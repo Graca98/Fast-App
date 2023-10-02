@@ -5,6 +5,7 @@ let kratkyTextPocet = document.getElementById("kratkyTextPocet");
 // Hlavička
 let typInput = document.getElementById("typ");
 let modelInput = document.getElementById("model");
+let pnCheckboxInput = document.getElementById("pnCheckbox")
 let pnInput = document.getElementById("pn");
 let osInput = document.getElementById("os");
 let ostatniHlavickaInput = document.getElementById("ostatniHlavicka");
@@ -45,7 +46,6 @@ let wifiInput = document.getElementById("wifi")
 let bluetoothInput = document.getElementById("bluetooth")
 let mechanikaValue = document.getElementById("mechanikaValue")
 // Barva a bateria
-let barvaInput = document.getElementById("barva")
 let baterieInput = document.getElementById("baterie")
 let baterieVydrzInput = document.getElementById("baterieVydrz")
 // Rozměry
@@ -53,6 +53,7 @@ let vyskaInput = document.getElementById("vyska")
 let sirkaInput = document.getElementById("sirka")
 let hloubkaInput = document.getElementById("hloubka")
 let hmotnostInput = document.getElementById("hmotnost")
+let barvaInput = document.getElementById("barva")
 
 // Zkopíruje text buttonu
 function copyModel() {
@@ -78,9 +79,10 @@ btnSubmit.addEventListener("click", function(e) {
   //todo Odstranit 'value = "hodnota"'
   let typ = typInput.value.trim()
   let model = modelInput.value.trim()
-  let pn = pnInput.value.trim()
+  let pnCheckbox = pnCheckboxInput.checked
+  let pn = pnCheckbox ? `\nPN ${pnInput.value.trim()}` : ""
   let os = osInput.value == "" ? `Bez operačního systému` : `Operační systém ${osInput.value}`
-  let osKratky = osInput.value == "" ? `Bez os` : `Operační systém ${osInput.value}`
+  let osKratky = osInput.value == "" ? `bez os` : `operační systém ${osInput.value}`
   let ostatniHlavicka = ""; //? Ponechá se prázdné jako volitelné
 
   // Procesor
@@ -110,13 +112,13 @@ btnSubmit.addEventListener("click", function(e) {
   let grafika = grafikaInput.value.trim()
   let pametGrafikaValue = pametGrafikaValueCheckbox.checked
   let grafikaPamet = "" // Hodnota v IF dole
+  let grafikaPametKratka = "" // Hodnota v IF dole
   let ostatniGrafika = ""
   // Specifiakce
   let wifi = wifiInput.value.trim()
   let bluetooth = bluetoothInput.value.trim()
   let ostatniSpecifikace = ""
-  // Barva a bateria
-  let barva = barvaInput.value.trim()
+  // Baterie
   let baterie = baterieInput.value.trim()
   let baterieVydrz = baterieVydrzInput.value.trim()
   // Rozměry
@@ -124,6 +126,7 @@ btnSubmit.addEventListener("click", function(e) {
   let sirka = sirkaInput.value.trim()
   let hloubka = hloubkaInput.value.trim()
   let hmotnost = hmotnostInput.value.trim()
+  let barva = barvaInput.value.trim()
 
 
   //. If podmínky na "ostatní"
@@ -149,7 +152,8 @@ btnSubmit.addEventListener("click", function(e) {
 
   // Pokud je Checkbox zaskrtnuty, vykona se podmínka
   if (pametGrafikaValue) {
-    grafikaPamet = `\nPaměť grafické karty ${grafikaPametInput.value} MB`
+    grafikaPamet = `\nPaměť grafické karty ${grafikaPametInput.value}`
+    grafikaPametKratka = ` se ${grafikaPametInput.value}`
   }
   if (frekvenceValue) {
     frekvence = `\nObnovovací frekvence displeje ${frekvenceInput.value} Hz`
@@ -157,10 +161,10 @@ btnSubmit.addEventListener("click", function(e) {
 
 
   //. Uložení bloku textu do jedné proměnné
-  let hlavickaText = `${typ}\n${model}\nPN ${pn}\n${os}${ostatniHlavicka}`
+  let hlavickaText = `${typ}\n${model}${pn}\n${os}${ostatniHlavicka}`
   let procesorText = `Procesor ${procesor}\nTaktovací frekvence procesoru (typická) ${typicka} GHz\nTaktovací frekvence procesoru (maximální) ${maximalni} GHz\nPočet jader procesoru ${jadra}${ostatniProcesor}`
   let pametText = `Paměť RAM ${pamet} GB\nÚložiště ${disk} ${uloziste} GB${ostatniPamet}`
-  let displejText = `${displejTyp} displej\nUhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\nSvítivost displeje ${svitivost} Nitů${frekvence}${ostatniDisplej}`
+  let displejText = `Uhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\n${displejTyp} displej\nSvítivost displeje ${svitivost} Nitů${frekvence}${ostatniDisplej}`
   let grafikaText = `${grafikaTyp} ${grafika}${grafikaPamet}${ostatniGrafika}`
   // Specifikace
     // checkboxy true/false
@@ -170,17 +174,17 @@ btnSubmit.addEventListener("click", function(e) {
     let webcamera = webcameraValue.checked ? `\nWeb kamera` : ""
     let cteckaOtisku = cteckaOtiskuValue.checked ? `\nČtečka otisku prstu` : ""
     let mechanika = mechanikaValue.checked ? `\nOptická mechanika` : "\nBez optické mechaniky"
-  let specifikaceText = `${touchPad}${podsvicenaKlavesnice}${numerickaKlavesnice}${webcamera}${cteckaOtisku}\nWi-Fi ${wifi}\nBluetooth ${bluetooth}${ostatniSpecifikace}${mechanika}`
-  let barvaABaterieText = `Barva ${barva}\nBaterie (typ/kapacita) ${baterie} WHrs\nVýdrž baterie ${baterieVydrz} h`
-  let rozmeryText = `Rozměry (V×Š×H) ${vyska} x ${sirka} x ${hloubka} cm\nHmotnost ${hmotnost} kg`
+  let specifikaceText = `${touchPad}${podsvicenaKlavesnice}${numerickaKlavesnice}${webcamera}${cteckaOtisku}\n\nWi-Fi ${wifi}\nBluetooth ${bluetooth}${ostatniSpecifikace}${mechanika}`
+  let baterieText = `Baterie (typ/kapacita) ${baterie} WHrs\nVýdrž až ${baterieVydrz} h`
+  let rozmeryText = `Rozměry (V×Š×H) ${vyska} x ${sirka} x ${hloubka} cm\nHmotnost ${hmotnost} kg\nBarva ${barva}`
 
 
   //. Vypsání uložených bloků textů zpět do stránky
   // B2B Text
-  b2bText.value = `${hlavickaText}\n\n${procesorText}\n\n${pametText}\n\n${displejText}\n\n${grafikaText}\n${specifikaceText}\n\n${barvaABaterieText}\n\n${rozmeryText}`
+  b2bText.value = `${hlavickaText}\n\n${procesorText}\n\n${pametText}\n\n${displejText}\n\n${grafikaText}\n${specifikaceText}\n\n${baterieText}\n\n${rozmeryText}`
 
   // Krátky text
-  kratkyTextResult.value = `${typ}, procesor ${procesor}, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, ${grafikaTypKratky} ${grafika}, RAM ${pamet} GB, paměť ${disk} ${uloziste} GB, ${osKratky}`
+  kratkyTextResult.value = `${typ}, procesor ${procesor} až ${maximalni} Ghz, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, RAM ${pamet} GB, paměť ${disk} ${uloziste} GB, ${grafikaTypKratky} ${grafika}${grafikaPametKratka}, ${osKratky}`
   // Počítadlo
   kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
 });
