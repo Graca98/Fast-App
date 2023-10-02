@@ -11,6 +11,7 @@ let osInput = document.getElementById("os");
 let ostatniHlavickaInput = document.getElementById("ostatniHlavicka");
 // Procesor
 let procesorInput = document.getElementById("procesor")
+let typickaCheckboxInput = document.getElementById("typickaCheckbox")
 let typickaInput = document.getElementById("typicka")
 let maximalniInput = document.getElementById("maximalni")
 let jadraInput = document.getElementById("jadra")
@@ -47,6 +48,7 @@ let bluetoothInput = document.getElementById("bluetooth")
 let mechanikaValue = document.getElementById("mechanikaValue")
 // Barva a bateria
 let baterieInput = document.getElementById("baterie")
+let baterieVydrzCheckboxInput = document.getElementById("baterieVydrzCheckbox")
 let baterieVydrzInput = document.getElementById("baterieVydrz")
 // Rozměry
 let vyskaInput = document.getElementById("vyska")
@@ -87,8 +89,10 @@ btnSubmit.addEventListener("click", function(e) {
 
   // Procesor
   let procesor = procesorInput.value.trim()
-  let typicka = typickaInput.value.trim()
-  let maximalni = maximalniInput.value.trim()
+  let typickaCheckbox = typickaCheckboxInput.checked
+  let typicka = typickaCheckbox ? `\nTaktovací frekvence procesoru (typická) ${typickaInput.value.trim()} GHz` : ""
+  let maximalni = typickaCheckbox ? `\nTaktovací frekvence procesoru (maximální) ${maximalniInput.value.trim()} GHz` : `\nFrekvence procesoru ${maximalniInput.value.trim()} GHz`
+  let maximalniKratky = `${maximalniInput.value.trim()} GHz`
   let jadra = jadraInput.value.trim()
   let ostatniProcesor = ""
 
@@ -120,7 +124,8 @@ btnSubmit.addEventListener("click", function(e) {
   let ostatniSpecifikace = ""
   // Baterie
   let baterie = baterieInput.value.trim()
-  let baterieVydrz = baterieVydrzInput.value.trim()
+  let baterieVydrzCheckbox = baterieVydrzCheckboxInput.checked
+  let baterieVydrz = baterieVydrzCheckbox ? `\nVýdrž až ${baterieVydrzInput.value.trim()} h` : ""
   // Rozměry
   let vyska = vyskaInput.value.trim()
   let sirka = sirkaInput.value.trim()
@@ -162,7 +167,7 @@ btnSubmit.addEventListener("click", function(e) {
 
   //. Uložení bloku textu do jedné proměnné
   let hlavickaText = `${typ}\n${model}${pn}\n${os}${ostatniHlavicka}`
-  let procesorText = `Procesor ${procesor}\nTaktovací frekvence procesoru (typická) ${typicka} GHz\nTaktovací frekvence procesoru (maximální) ${maximalni} GHz\nPočet jader procesoru ${jadra}${ostatniProcesor}`
+  let procesorText = `Procesor ${procesor}${typicka}${maximalni}\nPočet jader procesoru ${jadra}${ostatniProcesor}`
   let pametText = `Paměť RAM ${pamet} GB\nÚložiště ${disk} ${uloziste} GB${ostatniPamet}`
   let displejText = `Uhlopříčka ${uhlopricka}"\nRozlišení ${rozliseni} ${rozliseniTyp}\n${displejTyp} displej\nSvítivost displeje ${svitivost} Nitů${frekvence}${ostatniDisplej}`
   let grafikaText = `${grafikaTyp} ${grafika}${grafikaPamet}${ostatniGrafika}`
@@ -175,7 +180,7 @@ btnSubmit.addEventListener("click", function(e) {
     let cteckaOtisku = cteckaOtiskuValue.checked ? `\nČtečka otisku prstu` : ""
     let mechanika = mechanikaValue.checked ? `\nOptická mechanika` : "\nBez optické mechaniky"
   let specifikaceText = `${touchPad}${podsvicenaKlavesnice}${numerickaKlavesnice}${webcamera}${cteckaOtisku}\n\nWi-Fi ${wifi}\nBluetooth ${bluetooth}${ostatniSpecifikace}${mechanika}`
-  let baterieText = `Baterie (typ/kapacita) ${baterie} WHrs\nVýdrž až ${baterieVydrz} h`
+  let baterieText = `Baterie (typ/kapacita) ${baterie} WHrs${baterieVydrz}`
   let rozmeryText = `Rozměry (V×Š×H) ${vyska} x ${sirka} x ${hloubka} cm\nHmotnost ${hmotnost} kg\nBarva ${barva}`
 
 
@@ -184,7 +189,7 @@ btnSubmit.addEventListener("click", function(e) {
   b2bText.value = `${hlavickaText}\n\n${procesorText}\n\n${pametText}\n\n${displejText}\n\n${grafikaText}\n${specifikaceText}\n\n${baterieText}\n\n${rozmeryText}`
 
   // Krátky text
-  kratkyTextResult.value = `${typ}, procesor ${procesor} až ${maximalni} Ghz, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, RAM ${pamet} GB, paměť ${disk} ${uloziste} GB, ${grafikaTypKratky} ${grafika}${grafikaPametKratka}, ${osKratky}`
+  kratkyTextResult.value = `${typ}, procesor ${procesor} až ${maximalniKratky}, displej ${rozliseni} ${uhlopricka}" ${rozliseniTyp}, RAM ${pamet} GB, paměť ${disk} ${uloziste} GB, ${grafikaTypKratky} ${grafika}${grafikaPametKratka}, ${osKratky}`
   // Počítadlo
   kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
 });
