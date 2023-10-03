@@ -194,3 +194,11 @@ btnSubmit.addEventListener("click", function(e) {
   kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
 });
 
+
+// Nastaví pozici na začátek při obnovení stránky
+window.onload = function() {
+  window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+  });
+};
