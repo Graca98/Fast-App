@@ -51,7 +51,9 @@
               <div class="col-12 col-sm-6">
                 <div class="input-group input-group-sm mb-1">
                   <span class="input-group-text">Typ</span>
-                  <input type="text" id="typ" class="form-control" required value="Stavebnice" aria-label="stavebnice" aria-describedby="typ">
+                  <!-- <input type="text" id="typ" class="form-control" required value="Kryt na mobil" aria-label="stavebnice" aria-describedby="kryt na telefon"> -->
+                  <!-- <input type="text" id="typ" class="form-control" required value="Výměnný pásek pro hodinky" aria-label="stavebnice" aria-describedby="výměnný pásek pro hodinky"> -->
+                  <input type="text" id="typ" class="form-control" required value="Pouzdro pro tablet" aria-label="stavebnice" aria-describedby="Pouzdro pro tablet">
                 </div>
               </div>
             </div>
@@ -60,7 +62,7 @@
               <div class="col-12 col-md-8">
                 <div class="input-group input-group-sm mb-1">
                   <span class="input-group-text">Model</span>
-                  <input type="text" id="model" class="form-control" value="LEGO " aria-label="model" aria-describedby="model">
+                  <input type="text" id="model" class="form-control" value="Samsung " aria-label="model" aria-describedby="model">
                   <button class="btn btn-secondary" type="button" id="" onclick="copyModel()">Copy</button>
                 </div>
               </div>
@@ -78,17 +80,17 @@
                 </div>
               </div>
             </div>
-            <!-- doporučený věk -->
+            <!-- barva -->
             <div class="row">
               <div class="col-12 col-md-8">
                 <div class="input-group input-group-sm mb-1">
-                  <span class="input-group-text">Doporučený věk</span> <!--todo os musí napsat i text -->
-                  <input type="text" id="vek" class="form-control" placeholder="9" aria-label="vek" aria-describedby="vek">
+                  <span class="input-group-text">Barva</span> <!--todo os musí napsat i text -->
+                  <input type="text" id="barva" class="form-control" placeholder="čirá" aria-label="barva" aria-describedby="barva">
                 </div>
               </div>
             </div>
             <!-- počet kostek -->
-            <div class="row">
+            <div class="row d-none">
                 <div class="col-12 col-md-8">
                   <div class="input-group input-group-sm mb-1">
                     <span class="input-group-text">Počet kostek</span> <!--todo os musí napsat i text -->
@@ -100,7 +102,7 @@
             <div class="row">
               <div class="col-12 col-md-10">
                 <div class="input-group input-group-sm mb-1">
-                  <textarea id="ostatniHlavicka" class="form-control" aria-label="With textarea" placeholder="Text" rows="4"></textarea>
+                  <textarea id="ostatniHlavicka" class="form-control" aria-label="With textarea" placeholder="Text" rows="12"></textarea>
                 </div>
               </div>
             </div>
@@ -114,7 +116,7 @@
             <div class="row">
               <div class="col-12 col-md-10">
                 <div class="input-group input-group-sm mb-1">
-                  <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="12"></textarea>
+                  <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="20"></textarea>
                 </div>
                 <button class="btn btn-secondary" type="button" id="" onclick="copyB2B()">Copy</button>
               </div>
@@ -142,6 +144,6 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">  
   </script>
-  <script src="./js/legoVzor.js"></script>
+  <script src="./js/krytVzor.js"></script>
 </body>
 </html>
