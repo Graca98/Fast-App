@@ -1,10 +1,12 @@
 let btnSubmit = document.getElementById("btnSubmit");
 let b2bText = document.getElementById("b2bResult");
 let kratkyTextResult = document.getElementById("kratkyTextResult");
+let kratkyPocetZnaku = document.getElementById("kratkyPocetZnaku");
 
 let modelInput = document.getElementById("model");
 let pnCheckboxInput = document.getElementById("pnCheckbox")
 let pnInput = document.getElementById("pn");
+
 let kratkyTextInput = document.getElementById("kratkyText")
 
 // Zkopíruje text buttonu
@@ -30,9 +32,14 @@ btnSubmit.addEventListener("click", function(e) {
     let model = modelInput.value.trim();
     let pnCheckbox = pnCheckboxInput.checked
     let pn = pnCheckbox ? `\nPN ${pnInput.value.trim()}` : "";
+
     let barva = document.getElementById("barva").value.trim();
-    let kratkyText = kratkyTextInput.value.trim()
     barva = barva.toLowerCase()
+    let KratkyTextBarva = barva ? `, barva ${barva}` : ""
+    let b2bBarva = barva ? `\n\nBarva ${barva}` : ""
+
+    let kratkyText = kratkyTextInput.value.trim()
+    
     // let pocetKostek = document.getElementById("pocetKostek").value.trim();
     let ostatniHlavicka = document.getElementById("ostatniHlavicka").value.trim();
     ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
@@ -52,12 +59,13 @@ btnSubmit.addEventListener("click", function(e) {
   
     //. Vypsání uložených bloků textů zpět do stránky
     // B2B Text
-    b2bText.value = `${typ}\n${model}${pn}\n\n${ostatniHlavicka}\n\nBarva ${barva}`
+    b2bText.value = `${typ}\n${model}${pn}\n\n${ostatniHlavicka}${b2bBarva}`
   
     // Krátky text
-    kratkyTextResult.value = `${typ}, ${kratkyText}, barva ${barva}`
+    kratkyTextResult.value = `${typ}, ${kratkyText}${KratkyTextBarva}`
     // Počítadlo
     // kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
+    kratkyPocetZnaku.innerText = `Počet znaků: ${kratkyTextResult.value.length}`
   });
 
 // Nastaví pozici na začátek při obnovení stránky
