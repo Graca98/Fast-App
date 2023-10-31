@@ -23,6 +23,8 @@ function copyModel() {
 //   navigator.clipboard.writeText(pnInput.value.trim())
 // }
 
+
+
 btnSubmit.addEventListener("click", function(e) {
     e.preventDefault();
     b2bText.value = ""
@@ -34,7 +36,7 @@ btnSubmit.addEventListener("click", function(e) {
     let pn = pnCheckbox ? `\nPN ${pnInput.value.trim()}` : "";
 
     let barva = document.getElementById("barva").value.trim();
-    barva = barva.toLowerCase()
+        barva = barva.toLowerCase()
     let KratkyTextBarva = barva ? `, barva ${barva}` : ""
     let b2bBarva = barva ? `\n\nBarva ${barva}` : ""
 
@@ -42,31 +44,32 @@ btnSubmit.addEventListener("click", function(e) {
     
     // let pocetKostek = document.getElementById("pocetKostek").value.trim();
     let ostatniHlavicka = document.getElementById("ostatniHlavicka").value.trim();
-    ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
-    ostatniHlavicka = ostatniHlavicka.replace(/\•\s/g, "\n");
-    ostatniHlavicka = ostatniHlavicka.replace(/^"|"$/g, '');
-    ostatniHlavicka = ostatniHlavicka.trim()
+        ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
+        ostatniHlavicka = ostatniHlavicka.replace(/\•\s/g, "\n");
+        ostatniHlavicka = ostatniHlavicka.replace(/^"|"$/g, '');
+        ostatniHlavicka = ostatniHlavicka.trim()
       
   
-  
-    //. If podmínky na "ostatní"
-    // Pokud se vyplní "Ostatní" tak se zařadí do textu
-    
-  
-  
-    //. Uložení bloku textu do jedné proměnné
     
   
     //. Vypsání uložených bloků textů zpět do stránky
+
     // B2B Text
     b2bText.value = `${typ}\n${model}${pn}\n\n${ostatniHlavicka}${b2bBarva}`
   
     // Krátky text
     kratkyTextResult.value = `${typ}, ${kratkyText}${KratkyTextBarva}`
+
     // Počítadlo
-    // kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
     kratkyPocetZnaku.innerText = `Počet znaků: ${kratkyTextResult.value.length}`
   });
+
+
+kratkyTextResult.addEventListener("input", () => {
+  kratkyPocetZnaku.innerText = `Počet znaků: ${kratkyTextResult.value.length}`
+})
+
+
 
 // Nastaví pozici na začátek při obnovení stránky
 window.onload = function() {
