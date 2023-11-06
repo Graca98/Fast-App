@@ -3,11 +3,17 @@ let b2bText = document.getElementById("b2bResult");
 let kratkyTextResult = document.getElementById("kratkyTextResult");
 let kratkyPocetZnaku = document.getElementById("kratkyPocetZnaku");
 
+let mySelectForm = document.getElementById("mySelectForm")
 let modelInput = document.getElementById("model");
 let pnCheckboxInput = document.getElementById("pnCheckbox")
 let pnInput = document.getElementById("pn");
 
 let kratkyTextInput = document.getElementById("kratkyText")
+
+let rozmeryCheckboxInput = document.getElementById("rozmeryCheckbox")
+let vyskaInput = document.getElementById("vyska")
+let sirkaInput = document.getElementById("sirka")
+let hloubkaInput = document.getElementById("hloubka")
 
 // Zkopíruje text buttonu
 function copyB2B() {
@@ -42,6 +48,15 @@ btnSubmit.addEventListener("click", function(e) {
 
     let kratkyText = kratkyTextInput.value.trim()
     
+
+    let rozmeryCheckbox = rozmeryCheckboxInput.checked
+    let vyska = vyskaInput.value.trim()
+    let sirka = sirkaInput.value.trim()
+    let hloubka = hloubkaInput.value.trim()
+
+    let rozmery = rozmeryCheckbox ? `\n\nRozměry\nVýška: ${vyska} cm\nŠířka: ${sirka} cm\nHloubka: ${hloubka} cm` : ""
+        rozmery = rozmery.replace('.', ',')
+    
     // let pocetKostek = document.getElementById("pocetKostek").value.trim();
     let ostatniHlavicka = document.getElementById("ostatniHlavicka").value.trim();
         ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
@@ -50,12 +65,8 @@ btnSubmit.addEventListener("click", function(e) {
         ostatniHlavicka = ostatniHlavicka.trim()
       
   
-    
-  
-    //. Vypsání uložených bloků textů zpět do stránky
-
     // B2B Text
-    b2bText.value = `${typ}\n${model}${pn}\n\n${ostatniHlavicka}${b2bBarva}`
+    b2bText.value = `${typ}\n${model}${pn}\n\n${ostatniHlavicka}${rozmery}${b2bBarva}`
   
     // Krátky text
     kratkyTextResult.value = `${typ}, ${kratkyText}${KratkyTextBarva}`
@@ -65,6 +76,7 @@ btnSubmit.addEventListener("click", function(e) {
   });
 
 
+// Přepočítá počet znaků při ručním editu textového pole
 kratkyTextResult.addEventListener("input", () => {
   kratkyPocetZnaku.innerText = `Počet znaků: ${kratkyTextResult.value.length}`
 })

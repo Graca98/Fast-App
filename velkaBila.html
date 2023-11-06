@@ -51,10 +51,11 @@
               <div class="col-12 col-sm-6">
                 <div class="input-group input-group-sm mb-1">
                   <span class="input-group-text">Typ</span>
-                  <!-- <input type="text" id="typ" class="form-control" required value="Kryt na mobil" aria-label="stavebnice" aria-describedby="kryt na telefon"> -->
-                  <!-- <input type="text" id="typ" class="form-control" required value="Výměnný pásek pro hodinky" aria-label="stavebnice" aria-describedby="výměnný pásek pro hodinky"> -->
-                  <!-- <input type="text" id="typ" class="form-control" required value="Pouzdro pro tablet" aria-label="stavebnice" aria-describedby="Pouzdro pro tablet"> -->
+                  <!--todo     Změna typu -->
+                  <!-- <input type="text" id="typ" class="form-control" required placeholder="" value="Odkapávač na nadobí" aria-label="stavebnice" aria-describedby="Ochranná fólie"> -->
                   <input type="text" id="typ" class="form-control" required placeholder="" value="Odpadkový koš" aria-label="stavebnice" aria-describedby="Ochranná fólie">
+                  <!-- <input type="text" id="typ" class="form-control" required placeholder="" value="Dávkovač mýdla" aria-label="stavebnice" aria-describedby="Ochranná fólie"> -->
+                  <!-- <input type="text" id="typ" class="form-control" required placeholder="" value="Náhradní náplň" aria-label="stavebnice" aria-describedby="Ochranná fólie"> -->
                 </div>
               </div>
             </div>
@@ -75,7 +76,7 @@
                   <div class="input-group-text">
                     <input id="pnCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="pn checkbox">
                   </div>
-                  <span class="input-group-text">PN</span> <!--todo PN musí napsat i text -->
+                  <span class="input-group-text">PN</span>
                   <input type="text" id="pn" class="form-control" placeholder="76916" aria-label="pn" aria-describedby="pn">
                   <button class="btn btn-secondary" type="button" id="" onclick="copyPN()">Copy</button>
                 </div>
@@ -99,6 +100,21 @@
                   </div>
                 </div>
               </div>
+            <!-- Rozměry -->
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="input-group input-group-sm mb-1">
+                  <div class="input-group-text">
+                    <input id="rozmeryCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="pn checkbox" checked>
+                  </div>
+                  <span class="input-group-text">Rozměry</span>
+                  <input type="text" id="vyska" class="form-control" placeholder="Výška" aria-label="vyska" aria-describedby="vyska">
+                  <input type="text" id="sirka" class="form-control" placeholder="Šířka" aria-label="sirka" aria-describedby="sirka">
+                  <input type="text" id="hloubka" class="form-control" placeholder="Hloubka" aria-label="hloubka" aria-describedby="hloubka">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+            </div>
             <!-- Ostatní -->
             <div class="row">
               <div class="col-12 col-md-10">
