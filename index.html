@@ -29,7 +29,7 @@
               <a class="nav-link text-white" href="legoVzor.html">Lego</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white active" href="krytVzor.html">Velká Bílá</a>
+              <a class="nav-link text-white active" href="velkaBila.html">Velká Bílá</a>
             </li>
           </ul>
           <!-- <form class="d-flex" role="search">
@@ -121,6 +121,25 @@
       </div>
       <p class="rozdil col-12"></p>
     </div>
+
+    <div class="secondBox container-fluid mb-5 px-4">
+      <h3 class="pb-3 pt-1">Text na hyperlink</h3>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-10 pe-xl-4"> 
+          <textarea id="plainText" class="form-control col-6 col-lg-4 bg-dark text-white" rows="16" placeholder="Text na edit"></textarea>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center pt-2 pb-2">
+        <div class="btn-group">
+          <button onclick="transformHyperlinks()" type="button" class="btn btn-primary">Transform</button>
+          <button onclick="" type="button" class="btn btn-danger">Smazat</button>
+        </div>
+      </div>
+      <div>
+        <ol id="hyperlinkText" class="py-3 px-3"></ol>
+      </div>
+    </div>
+
   </div>
   </main>
   

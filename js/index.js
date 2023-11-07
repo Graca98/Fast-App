@@ -145,6 +145,23 @@ function smazFourthBox() {
 }
 
 
+//! ============================== Hyperlink text =============================================
+
+function transformHyperlinks() {
+  let plainText = document.getElementById("plainText").value
+
+  const urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+  const detectURL = plainText.match(urlRegex);
+  
+  let resultPost = plainText
+  
+  detectURL.forEach(url => {
+    resultPost = resultPost.replace(url, '<li><a target="_blank" href= "' + url + '" role="link" > ' + url.trim() + '</a></li>')
+  }) 
+  
+  document.getElementById("hyperlinkText").innerHTML = resultPost;
+  }
+
 
 
 /* 
