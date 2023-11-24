@@ -85,14 +85,15 @@ readyBoxNaRadek.addEventListener("input", function handleChange(e) {
 
 //! ============================== Odstranění hvezdiček =============================================
 let textareaHvezdicek = document.getElementById("textareaHvezdicek");
-let textareaHveznicekReady = document.getElementById("textareaHvezdicekReady");
+let textareaHvezdicekReady = document.getElementById("textareaHvezdicekReady");
 let result;
 
 textareaHvezdicek.addEventListener("input", function handleChange(e) {
-  let text = e.target.value
+  let text = e.target.value.trim()
   let zpracovanyText = text.replace(/\*\s/g, ''); // odstraní hvezdicku *
   zpracovanyText = zpracovanyText.replace(/\-\s/g, ''); // odstraní pomlčku -
   zpracovanyText = zpracovanyText.replace(/•\s+/g, ""); // odstraní • a mezeru
+  zpracovanyText = zpracovanyText.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1)).join('\n');
 
   result = textareaHvezdicekReady.value = zpracovanyText
 })
