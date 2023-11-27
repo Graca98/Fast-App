@@ -55,6 +55,7 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   formatovanyText = formatovanyText.replace(/\./g, "");
   formatovanyText = formatovanyText.replace(/ leifheit/g, " Leifheit");
   formatovanyText = formatovanyText.replace(/ profi/g, " PROFI");
+  formatovanyText = formatovanyText.replace(/ click/g, " CLICK");
 
   // formatovanyText = formatovanyText.replace(/ here/g, " here"); // vezme " " (mezera ) a nahradí " "
 

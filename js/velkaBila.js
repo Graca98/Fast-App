@@ -46,7 +46,7 @@ btnSubmit.addEventListener("click", function(e) {
     let KratkyTextBarva = barva ? `, barva ${barva}` : ""
     let b2bBarva = barva ? `\n\nBarva ${barva}` : ""
 
-    let kratkyText = kratkyTextInput.value.trim().toLowerCase()
+    let kratkyText = kratkyTextInput.value.trim()
     
 
     let rozmeryCheckbox = rozmeryCheckboxInput.checked
