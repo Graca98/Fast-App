@@ -56,6 +56,9 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   formatovanyText = formatovanyText.replace(/ leifheit/g, " Leifheit");
   formatovanyText = formatovanyText.replace(/ profi/g, " PROFI");
   formatovanyText = formatovanyText.replace(/ click/g, " CLICK");
+  formatovanyText = formatovanyText.replace(/ classic/g, " Classic");
+  formatovanyText = formatovanyText.replace(/ xl/g, " XL");
+  formatovanyText = formatovanyText.replace(/ xxl/g, " XXL");
 
   // formatovanyText = formatovanyText.replace(/ here/g, " here"); // vezme " " (mezera ) a nahradí " "
 
