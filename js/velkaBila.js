@@ -62,6 +62,10 @@ btnSubmit.addEventListener("click", function(e) {
         ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
         ostatniHlavicka = ostatniHlavicka.replace(/\•\s/g, "\n");
         ostatniHlavicka = ostatniHlavicka.replace(/^"|"$/g, '');
+        ostatniHlavicka = ostatniHlavicka.replace(/\*\s/g, ''); // odstraní hvezdicku *
+        ostatniHlavicka = ostatniHlavicka.replace(/\-\s/g, ''); // odstraní pomlčku -
+        ostatniHlavicka = ostatniHlavicka.replace(/•\s+/g, ""); // odstraní • a mezeru
+        ostatniHlavicka = ostatniHlavicka.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1)).join('\n');
         ostatniHlavicka = ostatniHlavicka.trim()
       
   

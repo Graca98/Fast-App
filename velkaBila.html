@@ -124,12 +124,34 @@
                 <div class="input-group input-group-sm mb-1">
                   <textarea id="ostatniHlavicka" class="form-control" aria-label="With textarea" placeholder="Text" rows="12"></textarea>
                 </div>
+                <div class="d-flex justify-content-between">
+                  <button type="submit" id="btnSubmit" class="btn btn-primary">Zpracovat</button>
+                  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#popisFunkci" aria-expanded="false" aria-controls="popisFunkci">
+                    Nápověda text formátu
+                  </button>
+                </div>
+
+                <div class="collapse" id="popisFunkci">
+                  <div class="card card-body text-secondary mt-1">
+                    <p>
+                      Nahradí všechny tečky s následující mezerou novým řádkem.<br />
+                      Nahradí všechny symboly &quot;&bull;&quot; s následující mezerou novým řádkem.<br />
+                      Odstraní uvozovky na začátku a konci textu.<br />
+                      Odstraní hvězdičky s následující mezerou.<br />
+                      Odstraní pomlčky s následující mezerou.<br />
+                      Odstraní symboly &quot;&bull;&quot; a následující mezery.<br />
+                      Rozdělí text na řádky a odstraní prázdné řádky.<br />
+                      Zvětší první písmeno každé věty.<br />
+                      Spojuje výsledek zpět do jednoho textu se správnými novými řádky.<br />
+                      Odstraní případné mezery na začátku a konci celého textu.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
     
     
     
-            <button type="submit" id="btnSubmit" class="btn btn-primary mt-4">Zpracovat</button>
     
             <!--. Result -->
             <h5 class="mt-5">B2B Text</h5>
