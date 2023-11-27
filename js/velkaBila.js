@@ -47,6 +47,7 @@ btnSubmit.addEventListener("click", function(e) {
     let b2bBarva = barva ? `\n\nBarva ${barva}` : ""
 
     let kratkyText = kratkyTextInput.value.trim()
+    kratkyText = kratkyText.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toLowerCase() + sentence.slice(1)).join('\n');
     
 
     let rozmeryCheckbox = rozmeryCheckboxInput.checked
