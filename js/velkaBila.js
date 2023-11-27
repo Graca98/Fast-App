@@ -46,9 +46,34 @@ btnSubmit.addEventListener("click", function(e) {
     let KratkyTextBarva = barva ? `, barva ${barva}` : ""
     let b2bBarva = barva ? `\n\nBarva ${barva}` : ""
 
+    // Formát krátkého textu
+    // let kratkyText = kratkyTextInput.value.trim()
+    // kratkyText = kratkyText.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toLowerCase() + sentence.slice(1)).join('\n');
     let kratkyText = kratkyTextInput.value.trim()
     kratkyText = kratkyText.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toLowerCase() + sentence.slice(1)).join('\n');
-    
+    kratkyText = kratkyText.replace(/\n/g, ', '); // nahradí dvojtečky za ""
+    kratkyText = kratkyText.replace(/:/g, ""); // nahradí dvojtečky za ""
+    kratkyText = kratkyText.replace(/ ,/g, ","); // nahradí mezeru před čárkou pouze čárkou
+    kratkyText = kratkyText.replace(/ w/g, " W"); // vezme " w" (mezera w) a nahradí " W"
+    kratkyText = kratkyText.replace(/ db/g, " dB"); // vezme " db" (mezera db) a nahradí " dB"
+    kratkyText = kratkyText.replace(/ hepa/g, " HEPA"); // vezme " hepa" (mezera hepa) a nahradí " HEPA"
+    kratkyText = kratkyText.replace(/ v nimh/g, " V NiMH"); // vezme " v nimh" (mezera v nimh) a nahradí " V NiMH"
+    kratkyText = kratkyText.replace(/ li-ion/g, " Li-Ion"); // vezme " li-ion" (mezera li-ion) a nahradí " Li-Ion"
+    kratkyText = kratkyText.replace(/li-ion/g, "Li-Ion");
+    kratkyText = kratkyText.replace(/ bpa/g, " BPA"); // vezme " bpa" (mezera ) a nahradí bpa" BPA"
+    kratkyText = kratkyText.replace(/ tare/g, " TARE"); // vezme " tare" (mezera tare) a nahradí " TARE"
+    kratkyText = kratkyText.replace(/ lcd/g, " LCD"); // vezme " lcd" (mezera lcd) a nahradí " LCD"
+    kratkyText = kratkyText.replace(/xtendlan/g, "XtendLan");
+    kratkyText = kratkyText.replace(/ utp/g, " UTP");
+    kratkyText = kratkyText.replace(/ cat/g, " Cat");
+    kratkyText = kratkyText.replace(/rj/g, "RJ");
+    kratkyText = kratkyText.replace(/\./g, "");
+    kratkyText = kratkyText.replace(/ leifheit/g, " Leifheit");
+    kratkyText = kratkyText.replace(/ profi/g, " PROFI");
+    kratkyText = kratkyText.replace(/ click/g, " CLICK");
+    kratkyText = kratkyText.replace(/ classic/g, " Classic");
+    kratkyText = kratkyText.replace(/ xl/g, " XL");
+    kratkyText = kratkyText.replace(/ xxl/g, " XXL");
 
     let rozmeryCheckbox = rozmeryCheckboxInput.checked
     let vyska = vyskaInput.value.trim()
@@ -58,7 +83,7 @@ btnSubmit.addEventListener("click", function(e) {
     let rozmery = rozmeryCheckbox ? `\n\nRozměry\nVýška: ${vyska} cm\nŠířka: ${sirka} cm\nHloubka: ${hloubka} cm` : ""
         rozmery = rozmery.replace('.', ',')
     
-    // let pocetKostek = document.getElementById("pocetKostek").value.trim();
+    //! Format B2B textu
     let ostatniHlavicka = document.getElementById("ostatniHlavicka").value.trim();
         ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
         ostatniHlavicka = ostatniHlavicka.replace(/\•\s/g, "\n");
