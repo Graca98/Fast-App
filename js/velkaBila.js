@@ -2,6 +2,7 @@ let btnSubmit = document.getElementById("btnSubmit");
 let b2bText = document.getElementById("b2bResult");
 let kratkyTextResult = document.getElementById("kratkyTextResult");
 let kratkyPocetZnaku = document.getElementById("kratkyPocetZnaku");
+let kratkyPocetZnaku2 = document.getElementById("kratkyPocetZnaku2"); // Pro kontorlu pod krátkých textem
 
 let mySelectForm = document.getElementById("mySelectForm")
 let modelInput = document.getElementById("model");
@@ -90,6 +91,7 @@ btnSubmit.addEventListener("click", function(e) {
         ostatniHlavicka = ostatniHlavicka.replace(/^"|"$/g, '');
         ostatniHlavicka = ostatniHlavicka.replace(/\*\s/g, ''); // odstraní hvezdicku *
         ostatniHlavicka = ostatniHlavicka.replace(/\-\s/g, ''); // odstraní pomlčku -
+        ostatniHlavicka = ostatniHlavicka.replace(/\-/g, ''); // odstraní pomlčku -
         ostatniHlavicka = ostatniHlavicka.replace(/•\s+/g, ""); // odstraní • a mezeru
         ostatniHlavicka = ostatniHlavicka.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1)).join('\n');
         ostatniHlavicka = ostatniHlavicka.trim()
@@ -103,12 +105,17 @@ btnSubmit.addEventListener("click", function(e) {
 
     // Počítadlo
     kratkyPocetZnaku.innerText = `Počet znaků: ${kratkyTextResult.value.length}`
+    kratkyPocetZnaku2.innerText = `Počet znaků: ${kratkyTextResult.value.length}`
   });
 
 
 // Přepočítá počet znaků při ručním editu textového pole
 kratkyTextResult.addEventListener("input", () => {
   kratkyPocetZnaku.innerText = `Počet znaků: ${kratkyTextResult.value.length}`
+})
+// Přepočítá počet znaků při ručním editu textového pole
+kratkyTextResult.addEventListener("input", () => {
+  kratkyPocetZnaku2.innerText = `Počet znaků: ${kratkyTextResult.value.length}`
 })
 
 

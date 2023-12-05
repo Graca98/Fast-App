@@ -1,5 +1,8 @@
+const rootDiv = document.getElementById("root")
 
+const pozdrav = "<h1>Ahoooj</h1>"
 
+rootDiv.appendChild(pozdrav)
 
 
 
