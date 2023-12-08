@@ -33,7 +33,8 @@ const Pricing = () => {
                         </label>
                     </div>
                 </div>
-                <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                {/* <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0"> */}
+                <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 lg:gap-0 lg:space-y-0">
                     {/* <!-- Pricing Card --> */}
                     <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-yellow-300 shadow dark:border-yellow-300 xl:p-8 dark:bg-gray-800 dark:text-white">
                         <h3 className="mb-4 text-2xl font-semibold">VIP</h3>
@@ -73,7 +74,7 @@ const Pricing = () => {
                         <a href="#" className="text-black bg-yellow-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900">Koupit</a>
                     </div>
                     {/* <!-- Pricing Card --> */}
-                    <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-cyan-400 shadow dark:border-cyan-400 xl:p-8 dark:bg-gray-800 dark:text-white">
+                    <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-cyan-400 shadow dark:border-cyan-400 xl:p-8 lg:scale-105 dark:bg-gray-800 dark:text-white">
                         <h3 className="mb-4 text-2xl font-semibold">EVIP</h3>
                         <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">Relevant for multiple users, extended & premium support.</p>
                         <div className="flex justify-center items-baseline my-8">
@@ -108,7 +109,7 @@ const Pricing = () => {
                                 <span>Free updates: <span className="font-semibold">24 months</span></span>
                             </li>
                         </ul>
-                        <a href="#" className="text-black bg-cyan-400 hover:bg-cyan-500 focus:ring-cyan-400 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-black  dark:focus:ring-cyan-900">Koupit</a>
+                        <a href="#" className="text-black bg-cyan-400 hover:bg-cyan-500 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-black  dark:focus:ring-cyan-900">Koupit</a>
                     </div>
                     {/* <!-- Pricing Card --> */}
                     <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-purple-700 shadow dark:border-purple-700 xl:p-8 dark:bg-gray-800 dark:text-white">
