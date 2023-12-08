@@ -109,7 +109,7 @@ const Pricing = () => {
                                 <span>Free updates: <span className="font-semibold">24 months</span></span>
                             </li>
                         </ul>
-                        <a href="#" className="text-black bg-cyan-400 hover:bg-cyan-500 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-black  dark:focus:ring-cyan-900">Koupit</a>
+                        <a href="https://tcrafteu.craftingstore.net/package/1121244" className="text-black bg-cyan-400 hover:bg-cyan-500 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-black  dark:focus:ring-cyan-900">Koupit</a>
                     </div>
                     {/* <!-- Pricing Card --> */}
                     <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-purple-700 shadow dark:border-purple-700 xl:p-8 dark:bg-gray-800 dark:text-white">
