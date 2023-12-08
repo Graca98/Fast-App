@@ -4,27 +4,14 @@ import { useState } from "react"
 
 const Pricing = () => {
     const [checked, setChecked] = useState(false)
-    const [cena, setCena] = useState({
+    const [price, setPrice] = useState({
         vip: '99 Kč',
         evip: '149 Kč',
         donator: '499 Kč'
     })
 
     const handlePrice = () => {
-        console.log(checked);
-        if (checked === false) {
-            setCena({
-                vip: '4 €',
-                evip: '6 €',
-                donator: '20 €',
-            })
-        } else {
-            setCena({
-                vip: '99 Kč',
-                evip: '149 Kč',
-                donator: '499 Kč'
-            })
-        }
+        setPrice(checked ? { vip: '99 Kč', evip: '149 Kč', donator: '499 Kč' } : { vip: '4 €', evip: '6 €', donator: '20 €' });
         setChecked(!checked)
         // setChecked(false)
     }
@@ -35,9 +22,11 @@ const Pricing = () => {
                 <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
                     <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-                    {/* Checkbox toggle */}
+                </div>
+                {/* Checkbox toggle */}
+                <div className="flex justify-center lg:justify-end mb-2">
                     <div className="form-control">
-                        <label className="label cursor-pointer">
+                        <label className="label cursor-pointer gap-4">
                             <span className="label-text">Kč</span> 
                             <input type="checkbox" className="toggle" checked={checked} onChange={ handlePrice }/>
                             <span className="label-text">Euro</span> 
@@ -50,7 +39,7 @@ const Pricing = () => {
                         <h3 className="mb-4 text-2xl font-semibold">VIP</h3>
                         <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best option for personal use & for your next project.</p>
                         <div className="flex justify-center items-baseline my-8">
-                            <span className="mr-2 text-5xl font-extrabold">{cena.vip}</span>
+                            <span className="mr-2 text-5xl font-extrabold">{price.vip}</span>
                             <span className="text-gray-500 dark:text-gray-400">/měsíc</span>
                         </div>
                         {/* <!-- List --> */}
@@ -88,7 +77,7 @@ const Pricing = () => {
                         <h3 className="mb-4 text-2xl font-semibold">EVIP</h3>
                         <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">Relevant for multiple users, extended & premium support.</p>
                         <div className="flex justify-center items-baseline my-8">
-                            <span className="mr-2 text-5xl font-extrabold">{cena.evip}</span>
+                            <span className="mr-2 text-5xl font-extrabold">{price.evip}</span>
                             <span className="text-gray-500 dark:text-gray-400">/měsíc</span>
                         </div>
                         {/* <!-- List --> */}
@@ -126,7 +115,7 @@ const Pricing = () => {
                         <h3 className="mb-4 text-2xl font-semibold">Donator</h3>
                         <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best for large scale uses and extended redistribution rights.</p>
                         <div className="flex justify-center items-baseline my-8">
-                            <span className="mr-2 text-5xl font-extrabold">{cena.donator}</span>
+                            <span className="mr-2 text-5xl font-extrabold">{price.donator}</span>
                             <span className="text-gray-500 dark:text-gray-400">/měsíc</span>
                         </div>
                         {/* <!-- List --> */}
