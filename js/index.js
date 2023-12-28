@@ -99,6 +99,7 @@ textareaHvezdicek.addEventListener("input", function handleChange(e) {
   let zpracovanyText = text.replace(/\*\s/g, ''); // odstraní hvezdicku *
   zpracovanyText = zpracovanyText.replace(/\-\s/g, ''); // odstraní pomlčku -
   zpracovanyText = zpracovanyText.replace(/•\s+/g, ""); // odstraní • a mezeru
+  zpracovanyText = zpracovanyText.replace(/•/g, ""); // odstraní • a mezeru
   zpracovanyText = zpracovanyText.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1)).join('\n');
 
   result = textareaHvezdicekReady.value = zpracovanyText

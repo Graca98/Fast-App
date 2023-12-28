@@ -94,6 +94,7 @@ btnSubmit.addEventListener("click", function(e) {
         ostatniHlavicka = ostatniHlavicka.replace(/\–\s/g, ''); // odstraní pomlčku - a mezeru
         // ostatniHlavicka = ostatniHlavicka.replace(/\-/g, ''); 
         ostatniHlavicka = ostatniHlavicka.replace(/•\s+/g, ""); // odstraní • a mezeru
+        ostatniHlavicka = ostatniHlavicka.replace(/•/g, ""); // odstraní • a mezeru
         ostatniHlavicka = ostatniHlavicka.replace(/®/g, "");
         ostatniHlavicka = ostatniHlavicka.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1)).join('\n');
         ostatniHlavicka = ostatniHlavicka.trim()

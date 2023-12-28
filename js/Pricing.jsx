@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from "react"
+import PricingTab from "./PricingTab"
+import PricingInfo from "./PricingInfo"
 
 const Pricing = () => {
     const [checked, setChecked] = useState(false)
@@ -10,14 +12,19 @@ const Pricing = () => {
         donator: '499 Kč'
     })
 
+
     const handlePrice = () => {
         setPrice(checked ? { vip: '99 Kč', evip: '149 Kč', donator: '499 Kč' } : { vip: '4 €', evip: '6 €', donator: '20 €' });
         setChecked(!checked)
         // setChecked(false)dddddddddddd
     }
 
+    const handleTabulku = () => {
+
+    }
+
     return <>
-        <section className="">
+        <section className="mb-52">
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Designed for business teams like yours</h2>
@@ -70,6 +77,11 @@ const Pricing = () => {
                                 <svg className="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
                                 <span>Free updates: <span className="font-semibold">6 months</span></span>
                             </li>
+                            <li className="flex items-center space-x-3">
+                                {/* <!-- Icon --> */}
+                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 invisible" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                <span className=""><button>Zobrazit více...</button></span>
+                            </li>
                         </ul>
                         <a href="#" className="text-black bg-yellow-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Koupit</a>
                     </div>
@@ -110,28 +122,11 @@ const Pricing = () => {
                                 <svg className="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
                                 <span>Free updates: <span className="font-semibold">24 months</span></span>
                             </li>
-                            {/* Zobrazit více test */}
-                            <div className="collapse bg-white">
-                                <input type="checkbox" className="" /> 
-                                <div className="collapse-title font-light">
-                                    Zobrazit více...
-                                </div>
-                                <div className="collapse-content px-0"> 
-                                    <ul role="list" className="mb-8 space-y-4 text-left">
-                                    <li className="flex items-center space-x-3">
-                                        {/* <!-- Icon --> */}
-                                        <svg className="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                        <span>Individual configuration</span>
-                                    </li>
-                                    <li className="flex items-center space-x-3">
-                                        {/* <!-- Icon --> */}
-                                        <svg className="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                        <span>No setup, or hidden fees</span>
-                                    </li> 
-                                    </ul>
-                                </div>
-                            </div>
-                            {/* Konec testu */}
+                            <li className="flex items-center space-x-3">
+                                {/* <!-- Icon --> */}
+                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 invisible" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                <span className=""><button>Zobrazit více...</button></span>
+                            </li>
                         </ul>
                         <a href="https://tcrafteu.craftingstore.net/package/1121244" className="text-black bg-cyan-400 hover:bg-cyan-500 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Koupit</a>
                     </div>
@@ -170,6 +165,11 @@ const Pricing = () => {
                                 <svg className="flex-shrink-0 w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
                                 <span>Free updates: <span className="font-semibold">36 months</span></span>
                             </li>
+                            <li className="flex items-center space-x-3">
+                                {/* <!-- Icon --> */}
+                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 invisible" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                <span className=""><button>Zobrazit více...</button></span>
+                            </li>
                         </ul>
                         <a href="#" className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Koupit</a>
                     </div>
@@ -177,142 +177,21 @@ const Pricing = () => {
             </div>
         </section>
 
-        {/* Price Tab */}
-        <section className="text-black">
-            <div className="container mx-auto p-6 overflow-x-auto">
-                <table className="w-full">
-                    <caption className="sr-only">Pricing plan comparison</caption>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th scope="col">
-                                <h2 className="px-2 text-lg font-medium">VIP</h2>
-                                <p className="mb-3">
-                                    <span className="text-2xl font-bold sm:text-4xl">{price.vip}</span>
-                                    <span className="font-medium dark:text-gray-400"> /m</span>
-                                </p>
-                            </th>
-                            <th scope="col">
-                                <h2 className="px-2 text-lg font-medium">EVIP</h2>
-                                <p className="mb-3">
-                                    <span className="text-2xl font-bold sm:text-4xl">{price.evip}</span>
-                                    <span className="font-medium dark:text-gray-400"> /m</span>
-                                </p>
-                            </th>
-                            <th scope="col">
-                                <h2 className="px-2 text-lg font-medium">Donator</h2>
-                                <p className="mb-3">
-                                    <span className="text-2xl font-bold sm:text-4xl">{price.donator}</span>
-                                    <span className="font-medium dark:text-gray-400"> /m</span>
-                                </p>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody className="space-y-6 text-center divide-y dark:divide-gray-700">
-                        <tr>
-                            <th scope="row" className="text-left">
-                                <h3 className="py-3">Neoznačené bankovky</h3>
-                            </th>
-                            <td>
-                                <span className="block text-sm">$2500</span>
-                            </td>
-                            <td>
-                                <span className="block text-sm">$5000</span>
-                            </td>
-                            <td>
-                                <span className="block text-sm">$10000</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" className="text-left">
-                                <h3 className="py-3">Principes et</h3>
-                            </th>
-                            <td>
-                                <span className="block text-sm">0,5 GB</span>
-                            </td>
-                            <td>
-                                <span className="block text-sm">5 GB</span>
-                            </td>
-                            <td>
-                                <span className="block text-sm">500 GB</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" className="text-left">
-                                <h3 className="py-3">Připojíš se na plný server</h3>
-                            </th>
-                            <td>
-                                <svg className="w-5 h-5 mx-auto text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                            </td>
-                            <td>
-                                <svg className="w-5 h-5 mx-auto text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                            </td>
-                            <td>
-                                <svg className="w-5 h-5 mx-auto text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" className="text-left">
-                                <h3 className="py-3">Veniam suscipiantur</h3>
-                            </th>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Not included in Free plan" className="w-5 h-5 mx-auto dark:text-gray-600">
-                                    <path fillRule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Included in Standard plan" className="w-5 h-5 mx-auto dark:text-violet-400">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Included in Premium plan" className="w-5 h-5 mx-auto dark:text-violet-400">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" className="text-left">
-                                <h3 className="py-3">Ornatus tacimates</h3>
-                            </th>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Not included in Free plan" className="w-5 h-5 mx-auto dark:text-gray-600">
-                                    <path fillRule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Not included in Standard plan" className="w-5 h-5 mx-auto dark:text-gray-600">
-                                    <path fillRule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Included in Premium plan" className="w-5 h-5 mx-auto dark:text-violet-400">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" className="text-left">
-                                <h3 className="py-3">Aliquam fastidii in mei</h3>
-                            </th>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Not included in Free plan" className="w-5 h-5 mx-auto dark:text-gray-600">
-                                    <path fillRule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Not included in Standard plan" className="w-5 h-5 mx-auto dark:text-gray-600">
-                                    <path fillRule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                            <td>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-label="Included in Premium plan" className="w-5 h-5 mx-auto dark:text-violet-400">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                                </svg>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        {/* Přepínání mezi tabem a odstavcema */}
+        <section>
+            <div role="tablist" className="tabs tabs-boxed w-1/2 mx-auto">
+                <button onClick={handleTabulku} role="tab" className="tab">Tab 1</button>
+                <button role="tab" className="tab tab-active">Tab 2</button>
+            </div>
+
+            {/* Vyhody v tabulce */}
+            <div className="hidden">
+                <PricingTab vip={price.vip} evip={price.evip} donator={price.donator}></PricingTab>
+            </div>
+
+            {/* Výhody v sekcích */}
+            <div className="hidden">
+                <PricingInfo></PricingInfo>
             </div>
         </section>
     </>
