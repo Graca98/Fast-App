@@ -1,8 +1,25 @@
-const rootDiv = document.getElementById("root")
+const url = 'https://mc-heads.net/avatar/'
 
-const pozdrav = "<h1>Ahoooj</h1>"
+const fetchApi = async (name) => {
+    const response = (url + name)
+    const data = await response.url
 
-rootDiv.appendChild(pozdrav)
+
+    return data
+}
+
+let page = document.getElementById('root')
+
+async function getAvatar(name) {
+    let result = await fetchApi(name)
+
+    let img = document.createElement('img')
+    img.src = result
+
+    return img
+}
+
+page.appendChild(getAvatar('Gracous'))
 
 
 
