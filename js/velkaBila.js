@@ -75,6 +75,7 @@ btnSubmit.addEventListener("click", function(e) {
     kratkyText = kratkyText.replace(/ classic/g, " Classic");
     kratkyText = kratkyText.replace(/ xl/g, " XL");
     kratkyText = kratkyText.replace(/ xxl/g, " XXL");
+    kratkyText = kratkyText.replace(/lED/g, "LED");
 
     let rozmeryCheckbox = rozmeryCheckboxInput.checked
     let vyska = vyskaInput.value.trim()
