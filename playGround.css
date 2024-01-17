@@ -2,3 +2,17 @@ body {
     background-color: rgb(49, 49, 49);
     color: white;
 }
+
+.jedenHrac * {
+    margin: 0;
+}
+.jedenHrac {
+    display: flex;
+    flex-direction: row;
+
+    margin: 10px 0;
+}
+
+.jedenHracimg {
+    padding-right: 5px;
+}

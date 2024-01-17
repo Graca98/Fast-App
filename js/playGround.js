@@ -1,25 +1,31 @@
 const url = 'https://mc-heads.net/avatar/'
 
-const fetchApi = async (name) => {
-    const response = (url + name)
-    const data = await response.url
+const fetchApi = async (url) => {
+    const response = await fetch(url)
+    if (!response.ok) {
+        throw new Error(`HTTP Error! status: ${response.status}`)
+    }
+    const data = response.url
+    // console.log(data);
 
 
     return data
 }
+// console.log(fetchApi('https://mc-heads.net/avatar/'));
 
 let page = document.getElementById('root')
 
 async function getAvatar(name) {
-    let result = await fetchApi(name)
+    let result = await fetchApi(url + name)
+    console.log(result);
 
     let img = document.createElement('img')
     img.src = result
 
-    return img
+    page.appendChild(img)
 }
 
-page.appendChild(getAvatar('Gracous'))
+
 
 
 
