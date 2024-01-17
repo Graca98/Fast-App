@@ -3,16 +3,32 @@ body {
     color: white;
 }
 
+.seznamHracu {
+    background-color: rgb(85, 85, 85);
+    padding: 2px 0;
+    max-width: 25%;
+    min-width: 225px;
+}
+
 .jedenHrac * {
     margin: 0;
 }
 .jedenHrac {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
-    margin: 10px 0;
+    margin: 10px;
+    padding: 0 40px 2px 8px;
 }
 
-.jedenHracimg {
-    padding-right: 5px;
+.jedenHracSkupina {
+    display: flex;
+}
+
+.jedenHracImg {
+    padding-right: 8px;
+}
+.jedenHracImg2 {
+    padding-right: 20px;
 }
