@@ -6,12 +6,9 @@ const fetchApi = async (url) => {
         throw new Error(`HTTP Error! status: ${response.status}`)
     }
     const data = response.url
-    // console.log(data);
-
 
     return data
 }
-// console.log(fetchApi('https://mc-heads.net/avatar/'));
 
 let page = document.getElementById('root')
 
