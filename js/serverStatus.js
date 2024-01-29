@@ -1,3 +1,5 @@
+// https://api.mcsrvstat.us/
+
 
 const fetchApi = async (url) => {
     let response = await fetch(url)
@@ -11,19 +13,27 @@ const fetchApi = async (url) => {
 let rootDiv = document.getElementById("root")
 
 async function getServerStatus(url) {
-    let server = await fetchApi(url)
-    console.log(server);
-    let ip = `<p>IP: ${server.hostname}</p>`
-    let mcVersion = `Verze: ${server.protocol.name}`
-    let status = `Status: ${server.online ? "Zapnutý" : "Vypnutý"}`
-    let players = `Hráčů online: ${server.players.online}/${server.players.max}`
-    let icon = server.icon
-    let motd = server.motd.html[0]
-    let motd2 = server.motd.html[1]
+    try {
+        let server = await fetchApi(url)
+        console.log(server);
+        let ip = `<p class="status">IP: ${server.hostname}</p>`
+        let mcVersion = `Verze: ${server.protocol.name}`
+        let status = `Status: ${server.online ? "Zapnutý" : "Vypnutý"}`
+        let players = `Hráčů online: ${server.players.online}/${server.players.max}`
+        let icon = server.icon
+        let motd = server.motd.html[0]
+        let motd2 = server.motd.html[1]
+    
 
-    rootDiv.innerHTML = ip + motd + motd2
 
-    return ip
+        rootDiv.innerHTML = ip + motd + motd2
+    
+        return ip
+    }
+    catch{
+        throw new Error("Tento server neexistuje")
+    }
+
 }
 
 // console.log(getServerStatus("https://api.mcsrvstat.us/3/play.tcraft.eu"));
@@ -31,4 +41,7 @@ async function displayServerStatus() {
     await getServerStatus("https://api.mcsrvstat.us/3/play.tcraft.eu")
 }
 
-displayServerStatus()
+// displayServerStatus()
+
+getServerStatus("https://api.mcsrvstat.us/3/play.tcraft.eu")
+getServerStatus("https://api.mcsrvstat.us/3/play.tcrafft.eu")
