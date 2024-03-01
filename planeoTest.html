@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="./style.css" type="text/css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+  <title>Fast App - Testing</title>
+</head>
+<body>
+  <!--! HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-primary p-1 px-3">
+      <div class="container-fluid">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-white" href="index.html">Fast App - Planeo TEST</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="index.html">Hlavní stránka</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="notebookyVzor.html">Notebooky</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white active" href="legoVzor.html">Lego</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white active" href="velkaBila.html">Velká Bílá</a>
+            </li>
+          </ul>
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--! HLAVNÍ OBSAH -->
+  <main>
+    <div class="main pt-4 mt-5">
+        <div class="firstBox container-fluid mb-5 px-4">
+          <form id="myForm">
+            <h6>Pomocník na texty</h6>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="input-group input-group-sm mb-1">
+                  <span class="input-group-text">Typ</span>
+                  <input type="text" id="typ" class="form-control" required placeholder="Příslušenství" value="" aria-label="stavebnice" aria-describedby="Ochranná fólie">
+                  <!-- <input type="text" id="typ" class="form-control" required placeholder="" value="Sušák na prádlo" aria-label="stavebnice" aria-describedby="Ochranná fólie"> -->
+
+                </div>
+              </div>
+            </div>
+              <!-- model -->
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="input-group input-group-sm mb-1">
+                  <span class="input-group-text">Model</span>
+                  <input type="text" id="model" class="form-control" placeholder="" value="" aria-label="model" aria-describedby="model">
+                  <button class="btn btn-secondary" type="button" id="" onclick="copyModel()">Copy</button>
+                </div>
+              </div>
+            </div>
+            <!-- PN -->
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="input-group input-group-sm mb-1">
+                  <div class="input-group-text">
+                    <input id="pnCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="pn checkbox">
+                  </div>
+                  <span class="input-group-text">PN</span>
+                  <input type="text" id="pn" class="form-control" placeholder="76916" aria-label="pn" aria-describedby="pn">
+                  <button class="btn btn-secondary" type="button" id="" onclick="copyPN()">Copy</button>
+                </div>
+              </div>
+            </div>
+            <!-- barva -->
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="input-group input-group-sm mb-1">
+                  <span class="input-group-text">Barva</span> <!--todo os musí napsat i text -->
+                  <input type="text" id="barva" class="form-control" placeholder="čirá" aria-label="barva" aria-describedby="barva">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Rozměry -->
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="input-group input-group-sm mb-1">
+                  <div class="input-group-text">
+                    <input id="rozmeryCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="pn checkbox">
+                  </div>
+                  <span class="input-group-text">Rozměry</span>
+                  <input type="text" id="vyska" class="form-control" placeholder="Výška" aria-label="vyska" aria-describedby="vyska">
+                  <input type="text" id="sirka" class="form-control" placeholder="Šířka" aria-label="sirka" aria-describedby="sirka">
+                  <input type="text" id="hloubka" class="form-control" placeholder="Hloubka" aria-label="hloubka" aria-describedby="hloubka">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+            </div>
+            <!-- Ostatní -->
+            <div class="row">
+              <div class="col-12 col-md-10">
+                <div class="input-group input-group-sm mb-1">
+                  <textarea id="ostatniHlavicka" class="form-control" aria-label="With textarea" placeholder="B2B Text" rows="14"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Krátky text -->
+            <div class="row">
+              <div class="col-12 col-md-10">
+                <div class="input-group input-group-sm mb-1">
+                  <!-- <span class="input-group-text">Krátký text</span> -->
+                  <!-- <input type="text" id="kratkyText" class="form-control" placeholder="vypsat klíčové" aria-label="kratkyText" aria-describedby="kratkyText"> -->
+                  <textarea type="text" id="kratkyText" class="form-control" placeholder="Krátky text" aria-label="kratkyText" aria-describedby="kratkyText" rows="12"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <p class="male-pismo mb-1" id="kratkyPocetZnaku2">Počet znaků: 0</p>
+              </div>
+            </div>
+
+            <!-- Button zpracovat a nápověda -->
+            <div class="row">
+              <div class="col-12 col-md-10">
+                <div class="d-flex justify-content-between">
+                  <button type="submit" id="btnSubmit" class="btn btn-primary">Zpracovat</button>
+                  <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#popisFunkci" aria-expanded="false" aria-controls="popisFunkci">
+                    Nápověda text formátu
+                  </button>
+                </div>
+
+                <div class="collapse" id="popisFunkci">
+                  <div class="card card-body text-secondary mt-1">
+                    <p>
+                      Nahradí všechny tečky s následující mezerou novým řádkem.<br />
+                      Nahradí všechny symboly &quot;&bull;&quot; s následující mezerou novým řádkem.<br />
+                      Odstraní uvozovky na začátku a konci textu.<br />
+                      Odstraní hvězdičky s následující mezerou.<br />
+                      Odstraní pomlčky s následující mezerou.<br />
+                      Odstraní symboly &quot;&bull;&quot; a následující mezery.<br />
+                      Rozdělí text na řádky a odstraní prázdné řádky.<br />
+                      Zvětší první písmeno každé věty.<br />
+                      Spojuje výsledek zpět do jednoho textu se správnými novými řádky.<br />
+                      Odstraní případné mezery na začátku a konci celého textu.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             
+            
+            
+    
+    
+    
+    
+            <!--. Result -->
+            <h5 class="mt-5">B2B Text</h5>
+            <div class="row">
+              <div class="col-12 col-md-10">
+                <div class="input-group input-group-sm mb-1">
+                  <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="20"></textarea>
+                </div>
+                <button class="btn btn-secondary" type="button" id="" onclick="copyB2B()">Copy</button>
+              </div>
+            </div>
+            <h5 class="mt-5">Krátký Text</h5>
+            <div class="row">
+              <div class="col-12 col-md-10">
+                <div class="input-group input-group-sm mb-1">
+                  <textarea id="kratkyTextResult" class="form-control" aria-label="kratky text" placeholder="Výsledek krátký text" rows="6"></textarea>
+                </div>
+                <div class="row">
+                  <p class="male-pismo mb-1" id="kratkyPocetZnaku">Počet znaků: 0</p>
+                </div>
+                <button class="btn btn-secondary" type="button" id="" onclick="copyKratky()">Copy</button>
+              </div>
+            </div>
+  
+          </form>
+          <!-- Konec -->
+        </div>
+      </div>
+  </main>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">  
+  </script>
+  <script src="./js/velkaBila.js"></script>
+</body>
+</html>
