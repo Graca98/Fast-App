@@ -59,9 +59,18 @@
             <div class="row">
               <div class="col-12 col-md-8">
                 <div class="input-group input-group-sm mb-1">
-                  <span class="input-group-text">Model</span>
-                  <input type="text" id="model" class="form-control" value="LEGO " aria-label="model" aria-describedby="model">
+                  <span class="input-group-text">Druh</span>
+                  <input type="text" id="model" class="form-control" placeholder="city, technic" aria-label="model" aria-describedby="model">
                   <button class="btn btn-secondary" type="button" id="" onclick="copyModel()">Copy</button>
+                </div>
+              </div>
+            </div>
+              <!-- model rozšířený -->
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="input-group input-group-sm mb-1">
+                  <span class="input-group-text">Téma</span>
+                  <input type="text" id="model2" class="form-control" placeholder="Stavební parní válec" aria-label="model" aria-describedby="model">
                 </div>
               </div>
             </div>
@@ -73,22 +82,13 @@
                     <input id="pnCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="pn checkbox" checked>
                   </div>
                   <span class="input-group-text">PN</span> <!--todo PN musí napsat i text -->
-                  <input type="text" id="pn" class="form-control" placeholder="76916" aria-label="pn" aria-describedby="pn">
+                  <input type="text" id="pn" class="form-control" placeholder="769.." aria-label="pn" aria-describedby="pn">
                   <button class="btn btn-secondary" type="button" id="" onclick="copyPN()">Copy</button>
                 </div>
               </div>
             </div>
-            <!-- doporučený věk -->
-            <div class="row">
-              <div class="col-12 col-md-8">
-                <div class="input-group input-group-sm mb-1">
-                  <span class="input-group-text">Doporučený věk</span> <!--todo os musí napsat i text -->
-                  <input type="text" id="vek" class="form-control" placeholder="9" aria-label="vek" aria-describedby="vek">
-                </div>
-              </div>
-            </div>
-            <!-- počet kostek -->
-            <div class="row">
+              <!-- počet kostek -->
+              <div class="row">
                 <div class="col-12 col-md-8">
                   <div class="input-group input-group-sm mb-1">
                     <span class="input-group-text">Počet kostek</span> <!--todo os musí napsat i text -->
@@ -96,11 +96,21 @@
                   </div>
                 </div>
               </div>
+            <!-- doporučený věk -->
+            <div class="row">
+              <div class="col-12 col-md-8">
+                <div class="input-group input-group-sm mb-1">
+                  <span class="input-group-text">Věk</span> <!--todo os musí napsat i text -->
+                  <input type="text" id="vek" class="form-control" placeholder="9" aria-label="vek" aria-describedby="vek">
+                </div>
+              </div>
+            </div>
+          
             <!-- Ostatní -->
             <div class="row">
               <div class="col-12 col-md-10">
                 <div class="input-group input-group-sm mb-1">
-                  <textarea id="ostatniHlavicka" class="form-control" aria-label="With textarea" placeholder="Text" rows="4"></textarea>
+                  <textarea id="ostatniHlavicka" class="form-control" aria-label="With textarea" placeholder="Text" rows="14"></textarea>
                 </div>
               </div>
             </div>
@@ -114,7 +124,7 @@
             <div class="row">
               <div class="col-12 col-md-10">
                 <div class="input-group input-group-sm mb-1">
-                  <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="12"></textarea>
+                  <textarea id="b2bResult" class="form-control" aria-label="With textarea" placeholder="Výsledek" rows="16"></textarea>
                 </div>
                 <button class="btn btn-secondary" type="button" id="" onclick="copyB2B()">Copy</button>
               </div>
