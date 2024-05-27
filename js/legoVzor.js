@@ -3,7 +3,9 @@ let b2bText = document.getElementById("b2bResult");
 let kratkyTextResult = document.getElementById("kratkyTextResult");
 
 let modelInput = document.getElementById("model");
+let model2Input = document.getElementById("model2");
 let pnInput = document.getElementById("pn");
+let kratkyTextPocet = document.getElementById("kratkyTextPocet");
 
 // Zkopíruje text buttonu
 function copyB2B() {
@@ -26,12 +28,16 @@ btnSubmit.addEventListener("click", function(e) {
     //. Proměnné
     let typ = document.getElementById("typ").value.trim();
     let model = modelInput.value.trim();
+    let model2 = model2Input.value.trim();
     let pn = pnInput.value.trim();
     let vek = document.getElementById("vek").value.trim();
     let pocetKostek = document.getElementById("pocetKostek").value.trim();
     let ostatniHlavicka = document.getElementById("ostatniHlavicka").value.trim();
-    ostatniHlavicka = ostatniHlavicka.replace(/®|\.$/g, "");
-    ostatniHlavicka = ostatniHlavicka.replace(/™/g, "");;
+    ostatniHlavicka = ostatniHlavicka
+    .replace(/^"\s*|\s*"\s*$/g, '') // Remove quotes at the beginning and end
+    .replace(/\n/g, '')            // Remove all existing new lines
+    .replace(/•\s*/g, "\n")
+    .trim(); 
       
   
   
@@ -45,13 +51,15 @@ btnSubmit.addEventListener("click", function(e) {
   
     //. Vypsání uložených bloků textů zpět do stránky
     // B2B Text
-    b2bText.value = `${typ}\n${model}\nPN ${pn}\n\nDoporučený věk ${vek}\nPočet kostek ${pocetKostek}\n\n${ostatniHlavicka}`
+    b2bText.value = `${typ}\nLEGO® ${model} ${model2}\nPN ${pn}\n\nPočet kostek ${pocetKostek}\nVěk ${vek}+\n\n${ostatniHlavicka}`
   
     // Krátky text
-    kratkyTextResult.value = `${typ} ${model}, doporučený věk ${vek}, počet kostek ${pocetKostek}`
+    kratkyTextResult.value = `${typ} LEGO® ${model} ${model2}, doporučený věk ${vek}+, počet kostek ${pocetKostek}`
     // Počítadlo
-    // kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
+    kratkyTextPocet.innerText = "Počet znaků: " + kratkyTextResult.value.length
+    console.log("velikost: " + kratkyTextResult.value.length)
   });
+
 
 // Nastaví pozici na začátek při obnovení stránky
 window.onload = function() {
