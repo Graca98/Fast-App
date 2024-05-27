@@ -35,7 +35,6 @@ btnSubmit.addEventListener("click", function(e) {
     let ostatniHlavicka = document.getElementById("ostatniHlavicka").value.trim();
     ostatniHlavicka = ostatniHlavicka
     .replace(/^"\s*|\s*"\s*$/g, '') // Remove quotes at the beginning and end
-    .replace(/\n/g, '')            // Remove all existing new lines
     .replace(/•\s*/g, "\n")
     .trim(); 
       
