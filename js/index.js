@@ -53,6 +53,12 @@ textNaRadek.addEventListener("input", function handleChange(e) {
   formatovanyText = formatovanyText.replace(/ cat/g, " Cat");
   formatovanyText = formatovanyText.replace(/rj/g, "RJ");
   formatovanyText = formatovanyText.replace(/\./g, "");
+  formatovanyText = formatovanyText.replace(/ leifheit/g, " Leifheit");
+  formatovanyText = formatovanyText.replace(/ profi/g, " PROFI");
+  formatovanyText = formatovanyText.replace(/ click/g, " CLICK");
+  formatovanyText = formatovanyText.replace(/ classic/g, " Classic");
+  formatovanyText = formatovanyText.replace(/ xl/g, " XL");
+  formatovanyText = formatovanyText.replace(/ xxl/g, " XXL");
 
   // formatovanyText = formatovanyText.replace(/ here/g, " here"); // vezme " " (mezera ) a nahradí " "
 
@@ -85,14 +91,16 @@ readyBoxNaRadek.addEventListener("input", function handleChange(e) {
 
 //! ============================== Odstranění hvezdiček =============================================
 let textareaHvezdicek = document.getElementById("textareaHvezdicek");
-let textareaHveznicekReady = document.getElementById("textareaHvezdicekReady");
+let textareaHvezdicekReady = document.getElementById("textareaHvezdicekReady");
 let result;
 
 textareaHvezdicek.addEventListener("input", function handleChange(e) {
-  let text = e.target.value
+  let text = e.target.value.trim()
   let zpracovanyText = text.replace(/\*\s/g, ''); // odstraní hvezdicku *
   zpracovanyText = zpracovanyText.replace(/\-\s/g, ''); // odstraní pomlčku -
   zpracovanyText = zpracovanyText.replace(/•\s+/g, ""); // odstraní • a mezeru
+  zpracovanyText = zpracovanyText.replace(/•/g, ""); // odstraní • a mezeru
+  zpracovanyText = zpracovanyText.split('\n').filter(Boolean).map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1)).join('\n');
 
   result = textareaHvezdicekReady.value = zpracovanyText
 })
@@ -144,6 +152,23 @@ function smazFourthBox() {
   differences = ""
 }
 
+
+//! ============================== Hyperlink text =============================================
+
+function transformHyperlinks() {
+  let plainText = document.getElementById("plainText").value
+
+  const urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+  const detectURL = plainText.match(urlRegex);
+  
+  let resultPost = plainText
+  
+  detectURL.forEach(url => {
+    resultPost = resultPost.replace(url, '<li><a target="_blank" href= "' + url + '" role="link" > ' + url.trim() + '</a></li>')
+  }) 
+  
+  document.getElementById("hyperlinkText").innerHTML = resultPost;
+  }
 
 
 
