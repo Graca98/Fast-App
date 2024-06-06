@@ -6,15 +6,21 @@ let kratkyPocetZnaku2 = document.getElementById("kratkyPocetZnaku2"); // Pro kon
 
 let mySelectForm = document.getElementById("mySelectForm");
 let modelInput = document.getElementById("model");
+let originalModelValue = modelInput.getAttribute("value");
+console.log(originalModelValue)
 let pnCheckboxInput = document.getElementById("pnCheckbox");
 let pnInput = document.getElementById("pn");
 
+let ostatniHlavickaInput = document.getElementById("ostatniHlavicka");
 let kratkyTextInput = document.getElementById("kratkyText");
 
 let rozmeryCheckboxInput = document.getElementById("rozmeryCheckbox");
 let vyskaInput = document.getElementById("vyska");
 let sirkaInput = document.getElementById("sirka");
 let hloubkaInput = document.getElementById("hloubka");
+
+let typInput = document.getElementById("typ");
+let barvaInput = document.getElementById("barva");
 
 // Zkopíruje text buttonu
 function copyB2B() {
@@ -26,36 +32,43 @@ function copyKratky() {
 function copyModel() {
   navigator.clipboard.writeText(modelInput.value.trim());
 }
+function copyPn() {
+  navigator.clipboard.writeText(pnInput.value.trim());
+}
 
-function reset() {
+function resetBtn() {
+  // typInput.value = "";
   b2bText.value = "";
   kratkyTextResult.value = "";
-  modelInput.value = "";
-  pnInput.value = value = "";
+  modelInput.value = originalModelValue;
   kratkyTextResult.value = "";
-  modelInput.value = "";
   pnInput.value = "";
+  
+  vyskaInput.value = "";
+  sirkaInput.value = "";
+  hloubkaInput.value = "";
+  
+  ostatniHlavickaInput.value = "";
+  kratkyTextInput.value = "";
 
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
 }
-// function copyPN() {
-//   navigator.clipboard.writeText(pnInput.value.trim())
-// }
+
 
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   b2bText.value = "";
 
   //. Proměnné
-  let typ = document.getElementById("typ").value.trim();
+  let typ =  typInput.value.trim();
   let model = modelInput.value.trim();
   let pnCheckbox = pnCheckboxInput.checked;
   let pn = pnCheckbox ? `\nPN ${pnInput.value.trim()}` : "";
-
-  let barva = document.getElementById("barva").value.trim();
+  
+  let barva = barvaInput.value.trim();
   barva = barva.toLowerCase();
   let KratkyTextBarva = barva ? `, barva ${barva}` : "";
   let b2bBarva = barva ? `\n\nBarva ${barva}` : "";
@@ -70,7 +83,7 @@ btnSubmit.addEventListener("click", function (e) {
     .map((sentence) => sentence.charAt(0).toLowerCase() + sentence.slice(1))
     .join("\n");
   kratkyText = kratkyText.replace(/\n/g, ", "); // nahradí dvojtečky za ""
-  kratkyText = kratkyText.replace(/:/g, ""); // nahradí dvojtečky za ""
+  // kratkyText = kratkyText.replace(/:/g, ""); // nahradí dvojtečky za ""
   kratkyText = kratkyText.replace(/ ,/g, ","); // nahradí mezeru před čárkou pouze čárkou
   kratkyText = kratkyText.replace(/ w/g, " W"); // vezme " w" (mezera w) a nahradí " W"
   kratkyText = kratkyText.replace(/ db/g, " dB"); // vezme " db" (mezera db) a nahradí " dB"
@@ -85,7 +98,7 @@ btnSubmit.addEventListener("click", function (e) {
   kratkyText = kratkyText.replace(/ utp/g, " UTP");
   kratkyText = kratkyText.replace(/ cat/g, " Cat");
   kratkyText = kratkyText.replace(/rj/g, "RJ");
-  kratkyText = kratkyText.replace(/\./g, "");
+  // kratkyText = kratkyText.replace(/\./g, "");
   kratkyText = kratkyText.replace(/ leifheit/g, " Leifheit");
   kratkyText = kratkyText.replace(/ profi/g, " PROFI");
   kratkyText = kratkyText.replace(/ click/g, " CLICK");
@@ -105,7 +118,7 @@ btnSubmit.addEventListener("click", function (e) {
   rozmery = rozmery.replace(".", ",");
 
   //! Format B2B textu
-  let ostatniHlavicka = document.getElementById("ostatniHlavicka").value.trim();
+  ostatniHlavicka = ostatniHlavickaInput.value.trim();
   ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
   ostatniHlavicka = ostatniHlavicka.replace(/\•\s/g, "\n");
   ostatniHlavicka = ostatniHlavicka.replace(/^"|"$/g, "");
