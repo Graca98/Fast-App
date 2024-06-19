@@ -51,26 +51,25 @@
               <div class="col-12 col-sm-6">
                 <div class="input-group input-group-sm mb-1">
                   <span class="input-group-text">Typ</span>
-                  <!--todo     Změna typu -->
                   <input type="text" id="typ" class="form-control" required placeholder="zadej.." value="" aria-label="stavebnice" aria-describedby="Ochranná fólie">
-                  <!-- <input type="text" id="typ" class="form-control" required placeholder="" value="Sušák na prádlo" aria-label="stavebnice" aria-describedby="Ochranná fólie"> -->
-
+                  <button class="btn btn-success" type="button" id="" onclick="saveTyp()">Save</button>
                 </div>
               </div>
             </div>
               <!-- model -->
             <div class="row">
-              <div class="col-12 col-md-8">
+              <div class="col-12 col-md-6">
                 <div class="input-group input-group-sm mb-1">
                   <span class="input-group-text">Model</span>
-                  <input type="text" id="model" class="form-control" placeholder="" value="Cuisinart " aria-label="model" aria-describedby="model">
+                  <input type="text" id="model" class="form-control" placeholder="" value="" aria-label="model" aria-describedby="model">
                   <button class="btn btn-secondary" type="button" id="" onclick="copyModel()">Copy</button>
+                  <button class="btn btn-success" type="button" id="" onclick="saveModel()">Save</button>
                 </div>
               </div>
             </div>
             <!-- PN -->
             <div class="row">
-              <div class="col-12 col-md-8">
+              <div class="col-12 col-md-6">
                 <div class="input-group input-group-sm mb-1">
                   <div class="input-group-text">
                     <input id="pnCheckbox" class="form-check-input mt-0" type="checkbox" value="" aria-label="pn checkbox">
@@ -83,7 +82,7 @@
             </div>
             <!-- barva -->
             <div class="row">
-              <div class="col-12 col-md-8">
+              <div class="col-12 col-md-6">
                 <div class="input-group input-group-sm mb-1">
                   <span class="input-group-text">Barva</span> <!--todo os musí napsat i text -->
                   <input type="text" id="barva" class="form-control" placeholder="čirá" aria-label="barva" aria-describedby="barva">

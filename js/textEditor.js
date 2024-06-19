@@ -5,42 +5,57 @@ let kratkyPocetZnaku = document.getElementById("kratkyPocetZnaku");
 let kratkyPocetZnaku2 = document.getElementById("kratkyPocetZnaku2"); // Pro kontorlu pod krátkých textem
 
 let mySelectForm = document.getElementById("mySelectForm");
+
+// Form inputs selectory
+let typInput = document.getElementById("typ");
 let modelInput = document.getElementById("model");
-let originalModelValue = modelInput.getAttribute("value");
-console.log(originalModelValue)
 let pnCheckboxInput = document.getElementById("pnCheckbox");
 let pnInput = document.getElementById("pn");
-
-let ostatniHlavickaInput = document.getElementById("ostatniHlavicka");
-let kratkyTextInput = document.getElementById("kratkyText");
-
+let barvaInput = document.getElementById("barva");
 let rozmeryCheckboxInput = document.getElementById("rozmeryCheckbox");
 let vyskaInput = document.getElementById("vyska");
 let sirkaInput = document.getElementById("sirka");
 let hloubkaInput = document.getElementById("hloubka");
 
-let typInput = document.getElementById("typ");
-let barvaInput = document.getElementById("barva");
+// B2B text
+let ostatniHlavickaInput = document.getElementById("ostatniHlavicka");
+let kratkyTextInput = document.getElementById("kratkyText");
+
+
 
 // Zkopíruje text buttonu
+function saveTyp() {
+  let typValue = typInput.value;
+  // Uloží typ do local storage (zůstane po kliknutí na reset button)
+  localStorage.setItem("typ", typValue);
+}
+
+function copyModel() {
+  navigator.clipboard.writeText(modelInput.value.trim());
+}
+
+function saveModel() {
+  let modelValue = modelInput.value;
+
+  localStorage.setItem("model", modelValue);
+}
+
 function copyB2B() {
   navigator.clipboard.writeText(b2bText.value.trim());
 }
 function copyKratky() {
   navigator.clipboard.writeText(kratkyTextResult.value.trim());
 }
-function copyModel() {
-  navigator.clipboard.writeText(modelInput.value.trim());
-}
 function copyPn() {
   navigator.clipboard.writeText(pnInput.value.trim());
 }
 
+// Smaže všechny input value a scrolluje na top
 function resetBtn() {
   // typInput.value = "";
   b2bText.value = "";
   kratkyTextResult.value = "";
-  modelInput.value = originalModelValue;
+  modelInput.value = localStorage.getItem("model");
   kratkyTextResult.value = "";
   pnInput.value = "";
   barvaInput.value = "";
