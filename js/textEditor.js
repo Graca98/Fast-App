@@ -64,7 +64,7 @@ btnSubmit.addEventListener("click", function (e) {
   b2bText.value = "";
 
   //. Proměnné
-  let typ =  typInput.value[0].toUpperCase() + typInput.value.slice(1).toLowerCase();;
+  let typ =  typInput.value[0].toUpperCase() + typInput.value.slice(1).toLowerCase();
   let model = modelInput.value.trim();
   let pnCheckbox = pnCheckboxInput.checked;
   let pn = pnCheckbox ? `\nPN ${pnInput.value.trim()}` : "";
