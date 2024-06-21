@@ -89,6 +89,29 @@ readyBoxNaRadek.addEventListener("input", function handleChange(e) {
   pocetZnakuReady.innerHTML = `Počet znaků v hotovém: ${text.length}`
 })
 
+//! ============================== Text pod sebe =============================================
+let box = document.getElementById('textPodSebe')
+let boxResult = document.getElementById('textPodSebeResult')
+let podSebeResult;
+
+box.addEventListener("input", function handleChange(e) {
+  let text = e.target.value
+  let formatujText = text.trim().replace(/,\s/g, '\n');
+
+  boxResult.value = formatujText
+  podSebeResult = formatujText
+})
+
+function CopyTextPodSebe() {
+  navigator.clipboard.writeText(podSebeResult)
+}
+
+function SmazTextPodSebe() {
+  box.value = ""
+  boxResult.value = ""
+}
+
+
 //! ============================== Odstranění hvezdiček =============================================
 let textareaHvezdicek = document.getElementById("textareaHvezdicek");
 let textareaHvezdicekReady = document.getElementById("textareaHvezdicekReady");
