@@ -83,7 +83,7 @@
             <div class="col-12 col-md-8">
               <div class="input-group input-group-sm mb-0">
                 <span class="input-group-text">Operační systém</span> <!--todo os musí napsat i text -->
-                <input type="text" id="os" class="form-control" placeholder="Windows 11 Home" aria-label="os" aria-describedby="os">
+                <input type="text" id="os" class="form-control" value="Windows 11 Home" aria-label="os" aria-describedby="os">
                 <!-- <span class="input-group-text">Bez OS? Nech prázdný</span> -->
               </div>
               <p class="male-pismo mb-2 pt-0 m-0">(Nech prázdné pokud nemá OS)</p>
@@ -254,7 +254,7 @@
           <div class="row">
             <div class="col-12 col-md-10">
               <div class="input-group input-group-sm mb-0">
-                <input type="text" id="grafikaTyp" class="form-control" value="Integrovaná" aria-label="grafikaTyp" aria-describedby="grafikaTyp">
+                <input type="text" id="grafikaTyp" class="form-control" value="Dedikovaná" aria-label="grafikaTyp" aria-describedby="grafikaTyp">
                 <span class="input-group-text">Grafická karta</span> <!--todo grafika musí napsat i text -->
                 <input type="text" id="grafika" class="form-control" placeholder="NVIDIA RTX 4050" aria-label="grafika" aria-describedby="grafika">
               </div>
@@ -267,10 +267,10 @@
             <div class="col-12 col-md-8">
               <div class="input-group mb-1">
                 <div class="input-group-text">
-                  <input id="pametGrafikaValue" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                  <input id="pametGrafikaValue" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" checked>
                 </div>
                 <span class="input-group-text">Paměť grafické karty</span>
-                <input type="text" id="grafikaPamet" class="form-control" placeholder="6GB GDDR6" aria-label="Text input with checkbox">
+                <input type="text" id="grafikaPamet" class="form-control" placeholder="6GB GDDR6" aria-label="Text input with checkbox" >
                 <!-- <span class="input-group-text">MB</span> -->
               </div>
             </div>
@@ -326,7 +326,7 @@
             <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Wi-Fi</span> <!--todo jadra musí napsat i text -->
-                <input type="text" id="wifi" class="form-control" value="6" aria-label="wifi" aria-describedby="wifi">
+                <input type="text" id="wifi" class="form-control" value="802.11ax" aria-label="wifi" aria-describedby="wifi">
               </div>
             </div>
           </div>
@@ -335,7 +335,7 @@
             <div class="col-12 col-md-6">
               <div class="input-group input-group-sm mb-1">
                 <span class="input-group-text">Bluetooth</span> <!--todo jadra musí napsat i text -->
-                <input type="text" id="bluetooth" class="form-control" value="5.1" aria-label="Bluetooth" aria-describedby="Bluetooth">
+                <input type="text" id="bluetooth" class="form-control" value="5.3" aria-label="Bluetooth" aria-describedby="Bluetooth">
               </div>
             </div>
           </div>
@@ -413,6 +413,15 @@
               </div>
             </div>
           </div>
+          <!-- barva -->
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group input-group-sm mb-1">
+                <span class="input-group-text">Barva</span> <!--todo jadra musí napsat i text -->
+                <input type="text" id="barva" class="form-control" placeholder="modrá" aria-label="barva" aria-describedby="barva">
+              </div>
+            </div>
+          </div>
           <!-- hmotnost -->
           <div class="row">
             <div class="col-12 col-md-6">
@@ -420,15 +429,6 @@
                 <span class="input-group-text">Hmotnost</span> <!--todo jadra musí napsat i text -->
                 <input type="text" id="hmotnost" class="form-control" placeholder="1,5" aria-label="hmotnost" aria-describedby="hmotnost">
                 <span class="input-group-text">kg</span> <!--todo jadra musí napsat i text -->
-              </div>
-            </div>
-          </div>
-          <!-- barva -->
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="input-group input-group-sm mb-1">
-                <span class="input-group-text">Barva</span> <!--todo jadra musí napsat i text -->
-                <input type="text" id="barva" class="form-control" placeholder="modrá" aria-label="barva" aria-describedby="barva">
               </div>
             </div>
           </div>
