@@ -1,0 +1,117 @@
+<div className="relative z-[90]">
+  <div
+    tabindex="0"
+    className="fixed right-0 top-0 z-40 flex h-screen w-full flex-col overflow-y-auto bg-white p-4 focus:outline-0 sm:max-w-[600px] sm:p-6"
+  >
+    <div className="flex-1">
+      <div className="mb-2">
+        <div className="relative inline-flex rounded-md border border-gray-300">
+          <span
+            className="inline-flex cursor-default items-center p-1 px-2 text-sm text-black"
+            ><span className="flex h-2 w-2"
+              ><span
+                className="relative inline-flex h-2 w-2 rounded-full bg-gray-300"
+              ></span></span
+            ><span className="ml-2 capitalize">pending</span></span
+          ><button
+            className="inline-flex cursor-pointer items-center rounded-br-md rounded-tr-md border-l border-l-gray-300 bg-gray-100 p-1 px-2 text-sm text-black hover:bg-gray-200"
+          >
+            <span className="mr-0.5">Update Status</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="lucide lucide-chevron-down h-4 w-4"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+        <button
+          type="button"
+          id="close-topic"
+          className="absolute right-2.5 top-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="lucide lucide-x h-5 w-5"
+          >
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div
+        className="prose prose-quoteless prose-h1:mb-2.5 prose-h1:mt-7 prose-h1:text-balance prose-h2:mb-3 prose-h2:mt-0 prose-h3:mb-[5px] prose-h3:mt-[10px] prose-p:mb-2 prose-p:mt-0 prose-blockquote:font-normal prose-blockquote:not-italic prose-blockquote:text-gray-700 prose-li:m-0 prose-li:mb-0.5"
+      >
+        <div id="topic-content">
+          <div
+            data-github-url="https://github.com/kamranahmedse/developer-roadmap/tree/master/src/data/roadmaps/javascript/content/103-javascript-type-casting/100-type-conversion-coercion.md"
+          ></div>
+          <h1 id="type-conversioncoercion">Type Conversion/Coercion</h1>
+          <p>
+            Type coercion is the automatic or implicit conversion of values from
+            one data type to another (such as strings to numbers). Type
+            conversion is similar to type coercion because they convert values
+            from one data type to another with one key difference — type
+            coercion is implicit. In contrast, type conversion can be either
+            implicit or explicit.
+          </p>
+          <p>Visit the following resources to learn more:</p>
+        </div>
+      </div>
+      <ul className="mt-6 space-y-1">
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion"
+            target="_blank"
+            className="group font-medium text-gray-800 underline underline-offset-1 hover:text-black"
+            ><span
+              className="mr-2 inline-block rounded px-1.5 py-0.5 text-xs uppercase no-underline bg-yellow-300"
+              >article</span
+            >Type Conversion - MDN</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion"
+            target="_blank"
+            className="group font-medium text-gray-800 underline underline-offset-1 hover:text-black"
+            ><span
+              className="mr-2 inline-block rounded px-1.5 py-0.5 text-xs uppercase no-underline bg-yellow-300"
+              >article</span
+            >Type Coercion - MDN</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/watch?v=jfQyMPzPTjY"
+            target="_blank"
+            className="group font-medium text-gray-800 underline underline-offset-1 hover:text-black"
+            ><span
+              className="mr-2 inline-block rounded px-1.5 py-0.5 text-xs uppercase no-underline bg-purple-300"
+              >video</span
+            >Type Conversion and Coercion video</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="fixed inset-0 z-30 bg-gray-900 bg-opacity-50 dark:bg-opacity-80"
+  ></div>
+</div>

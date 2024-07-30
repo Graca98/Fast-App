@@ -157,8 +157,8 @@ btnSubmit.addEventListener("click", function(e) {
 
   // Pokud je Checkbox zaskrtnuty, vykona se podmínka
   if (pametGrafikaValue) {
-    grafikaPamet = `\nPaměť grafické karty ${grafikaPametInput.value}`
-    grafikaPametKratka = ` se ${grafikaPametInput.value}`
+    grafikaPamet = `\nPaměť grafické karty ${grafikaPametInput.value} GB`
+    grafikaPametKratka = ` s ${grafikaPametInput.value} GB`
   }
   if (frekvenceValue) {
     frekvence = `\nObnovovací frekvence displeje ${frekvenceInput.value} Hz`
@@ -180,7 +180,7 @@ btnSubmit.addEventListener("click", function(e) {
     let cteckaOtisku = cteckaOtiskuValue.checked ? `\nČtečka otisku prstu` : ""
     let mechanika = mechanikaValue.checked ? `\nOptická mechanika` : "\nBez optické mechaniky"
   let specifikaceText = `${touchPad}${podsvicenaKlavesnice}${numerickaKlavesnice}${webcamera}${cteckaOtisku}\n\nWi-Fi ${wifi}\nBluetooth ${bluetooth}${ostatniSpecifikace}${mechanika}`
-  let baterieText = `Baterie (typ/kapacita) ${baterie} WHrs${baterieVydrz}`
+  let baterieText = `Baterie (typ/kapacita) ${baterie} Wh${baterieVydrz}`
   let rozmeryText = `Rozměry (V×Š×H) ${vyska} x ${sirka} x ${hloubka} cm\nHmotnost ${hmotnost} kg\nBarva ${barva}`
 
 

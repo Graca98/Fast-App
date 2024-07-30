@@ -122,6 +122,11 @@ btnSubmit.addEventListener("click", function (e) {
   kratkyText = kratkyText.replace(/ xl/g, " XL");
   kratkyText = kratkyText.replace(/ xxl/g, " XXL");
   kratkyText = kratkyText.replace(/lED/g, "LED");
+  kratkyText = kratkyText.replace(/uSB/g, "USB");
+  kratkyText = kratkyText.replace(/uS/g, "US");
+
+
+  kratkyText = kratkyText.slice(0, 1).toUpperCase() + kratkyText.slice(1)
 
   let rozmeryCheckbox = rozmeryCheckboxInput.checked;
   let vyska = vyskaInput.value.trim();
@@ -134,29 +139,48 @@ btnSubmit.addEventListener("click", function (e) {
   rozmery = rozmery.replace(".", ",");
 
   //! Format B2B textu
-  ostatniHlavicka = ostatniHlavickaInput.value.trim();
-  ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
-  ostatniHlavicka = ostatniHlavicka.replace(/\•\s/g, "\n");
+  let ostatniHlavicka = ostatniHlavickaInput.value.trim();
+  // ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, ".\n");
+  ostatniHlavicka = ostatniHlavicka.replace(/\•\s/g, "•\n");
   ostatniHlavicka = ostatniHlavicka.replace(/^"|"$/g, "");
-  ostatniHlavicka = ostatniHlavicka.replace(/\*\s/g, ""); // odstraní hvezdicku *
+  ostatniHlavicka = ostatniHlavicka.replace(/\*\s/g, ""); // odstraní hvězdičku *
   ostatniHlavicka = ostatniHlavicka.replace(/\-\s/g, ""); // odstraní pomlčku - a mezeru
   ostatniHlavicka = ostatniHlavicka.replace(/\–\s/g, ""); // odstraní pomlčku - a mezeru
-  // ostatniHlavicka = ostatniHlavicka.replace(/\-/g, '');
   ostatniHlavicka = ostatniHlavicka.replace(/•\s+/g, ""); // odstraní • a mezeru
   ostatniHlavicka = ostatniHlavicka.replace(/•/g, ""); // odstraní • a mezeru
   ostatniHlavicka = ostatniHlavicka.replace(/®/g, "");
+
+// Zachovat mezery mezi řádky, ale kapitalizovat první písmeno každého řádku
   ostatniHlavicka = ostatniHlavicka
     .split("\n")
-    .filter(Boolean)
-    .map((sentence) => sentence.charAt(0).toUpperCase() + sentence.slice(1))
+    .map(line => line.trim())  // odstraní přebytečné mezery na začátku a na konci každého řádku
+    .map(line => line.charAt(0).toUpperCase() + line.slice(1))  // kapitalizace prvního písmene
     .join("\n");
-  ostatniHlavicka = ostatniHlavicka.trim();
+
+  // let ostatniHlavicka = ostatniHlavickaInput.value.trim();
+  // // ostatniHlavicka = ostatniHlavicka.replace(/\.\s/g, "\n");
+  // ostatniHlavicka = ostatniHlavicka.replace(/\•\s/g, "\n");
+  // ostatniHlavicka = ostatniHlavicka.replace(/^"|"$/g, "");
+  // ostatniHlavicka = ostatniHlavicka.replace(/\*\s/g, ""); // odstraní hvezdicku *
+  // ostatniHlavicka = ostatniHlavicka.replace(/\-\s/g, ""); // odstraní pomlčku - a mezeru
+  // ostatniHlavicka = ostatniHlavicka.replace(/\–\s/g, ""); // odstraní pomlčku - a mezeru
+  // // ostatniHlavicka = ostatniHlavicka.replace(/\-/g, '');
+  // ostatniHlavicka = ostatniHlavicka.replace(/•\s+/g, ""); // odstraní • a mezeru
+  // ostatniHlavicka = ostatniHlavicka.replace(/•/g, ""); // odstraní • a mezeru
+  // // ostatniHlavicka = ostatniHlavicka.replace(/®/g, "");
+  // ostatniHlavicka = ostatniHlavicka
+  //   .split("\n")
+  //   .filter(Boolean)
+  //   .map((sentence) => sentence.charAt(0).toUpperCase() + sentence.slice(1))
+  //   .join("\n");
+  // ostatniHlavicka = ostatniHlavicka.trim();
 
   // B2B Text
   b2bText.value = `${typ}\n${model}${pn}\n\n${ostatniHlavicka}${rozmery}${b2bBarva}`;
 
   // Krátky text
-  kratkyTextResult.value = `${typ}, ${kratkyText}${KratkyTextBarva}`;
+  // kratkyTextResult.value = `${typ}, ${kratkyText}${KratkyTextBarva}`;
+  kratkyTextResult.value = `${kratkyText}${KratkyTextBarva}`;
 
   // Počítadlo
   kratkyPocetZnaku.innerText = `Počet znaků: ${kratkyTextResult.value.length}`;
