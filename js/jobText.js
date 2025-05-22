@@ -5,12 +5,19 @@ let poziceInput = document.getElementById("pozice");
 let pozice;
 let ukazkaInput = document.getElementById("ukazka");
 
+// Web copy
+let webLink = document.getElementById("web")
+
 function copyResult() {
   navigator.clipboard.writeText(result.value.trim());
+}
+function copyWebLink() {
+  navigator.clipboard.writeText(webLink.value.trim());
 }
 
 function resetBtn() {
   // typInput.value = "";
+  poziceInput.value = "";
   result.value = "";
 
   window.scrollTo({
